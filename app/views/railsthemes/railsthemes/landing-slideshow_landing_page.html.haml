@@ -1,0 +1,15 @@
+.row
+  .large-12.small-12.columns
+    %ul{ "data-orbit" => "true" }
+      - 4.times do |counter|
+        %li
+          = image_tag "railsthemes/sample_images/sample#{counter + 1}.jpg", :style => "width: 100%"
+          .orbit-caption Hello
+
+.row.roomy
+  - 3.times do |counter|
+    .large-4.small-12.columns
+      = link_to "#" do
+        = image_tag 'http://placehold.it/300x150/ccc/fff&text=[+Image+]', :class => "th"
+      %h4 Section #{counter + 1}
+      %p= lorem(23)

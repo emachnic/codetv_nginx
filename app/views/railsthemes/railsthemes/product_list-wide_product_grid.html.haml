@@ -1,0 +1,13 @@
+.row
+  .large-6.small-6.columns
+    %h1.title Themes
+  .large-6.small-6.columns
+    = link_to "Create Account", "#", :class => "button secondary right"
+.row
+  .large-12.small-12.columns
+    %h2.majorheading Browse. Buy. Install. That's all.
+- 3.times do
+  .row.wide_products
+    - 2.times do
+      .large-6.small-12.columns
+        = render :partial => 'railsthemes/railsthemes/wide_product_summary', :locals => { :image => "http://placehold.it/1000x300&text=[Preview Image]", :link => "#", :name => "Inspiration"}

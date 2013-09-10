@@ -1,0 +1,27 @@
+%h1 Code School Journal
+
+%table
+  %tr
+    %th Date
+    %th Title
+    %th Body
+    %th Mood
+    %th
+    %th
+    %th
+
+  - @entries.each do |entry|
+    %tr
+      %td
+        = time_ago_in_words(entry.created_at)
+        ago
+      %td= entry.title
+      %td= entry.body
+      %td= entry.mood.name
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entry', new_entry_path

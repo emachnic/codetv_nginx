@@ -1,0 +1,60 @@
+.row
+  .large-6.small-12.columns
+    %h1 Inspiration
+  .large-6.small-12.columns
+    .right
+      = link_to "Demo", "#", :class => "button secondary light"
+      = link_to "Buy Theme", "#", :class => "button"
+.row
+  .large-2.small-12.column
+    %h5 Description
+    %p= lorem(12)
+    %h5 Released
+    %p March 2013
+  .large-10.small-12.columns
+    = image_tag "http://placehold.it/1000x500&text=[Preview Image]"
+.row
+  .large-12.small-12.columns
+    %h2.majorheading Theme Details
+.row
+  .large-12.small-12.columns
+    .section-container.auto{ "data-section" => "" }
+      .section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "Features", "#featuresTab"
+        .content{ "data-section-content" => "" }
+          %p This simple yet popping design is waiting for your creativity. Make it your own and it will be sure to grab attention.
+
+          %h5 Features:
+
+          %ul
+            %li Custom Form Styling
+            %li HTML5
+            %li Includes jQuery UI Theme
+            %li= link_to "Full Feature List..", "#"
+
+          %p Theme Last Updated: 2012-08-28 12:14:58 +0000
+
+      .section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "Browser Compatibility", "#compatibilityTab"
+        .content
+          %p We test in the following browsers:
+
+          %h5 Browser Support
+          %p [The browser images go here]
+          %ul
+            - browsers = ["Chrome 28", "Firefox 23", "Internet Explorer 10", "Android 4", "iPad OS 10", "iPhone OS 10"]
+            - browsers.each do |browser|
+              %li= browser
+          %br
+      .section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "Testing Report", "#testingTab"
+        .content
+          This would be a testing report list.
+      .section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "Changelog", "#changelogTab"
+        .content
+          This would be a changelog.

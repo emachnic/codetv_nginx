@@ -1,0 +1,31 @@
+.row
+  .large-12.small-12.columns
+    %h2 Shopping Cart
+    %table.cart
+      %thead
+        %tr
+          %th
+          %th
+          %th Price
+          %th Quantity
+      %tbody
+        - 3.times do
+          %tr.item
+            %td
+              = image_tag "http://placehold.it/60x60"
+            %td
+              %p= lorem(8)
+            %td.align-right
+              %p
+                %strong $4.99
+            %td
+              %input{ :type => 'text', :value => 1, :size => '1' }
+        %tr.total
+          %td{ :colspan => '2' }
+            %span.title Total:
+          %td
+            &nbsp;
+          %td
+            %p
+              %strong
+                %em $14.97

@@ -1,0 +1,78 @@
+= content_for :sidebar_right do
+  .row
+    .large-12.small-12.columns
+      .panel.radius
+        %h3.title
+          %span.icon.location
+          Locations
+        - 2.times do |counter|
+          .address
+            %h4 Location #{counter + 1}
+            %p
+              123 Street Drive
+              %br/
+              City, ST 12345
+              %br/
+              Phone 123.456.7890
+              %br/
+              Fax 123.456.7890
+            %p
+              = link_to "info@company.com", "mailto:info@company.com"
+              %br/
+            = link_to "Map It", :root, :class => "button small radius"
+      .panel.join-panel.radius
+        %h3.title
+          %span.icon.tweets
+          Recent Tweets
+        %p.tweet
+          Happy Holidays.
+          %br/
+          %span.tweet-date Dec. 22 at 10:15am
+        %p.tweet
+          Ima Tweet (and a Pirate!)
+          %br/
+          %span.tweet-date Dec. 22 at 10:15am
+        %p.tweet
+          Members don’t miss lunch tomorrow. Coco’s Italian Market!
+          %br/
+          %span.tweet-date Dec. 22 at 10:15am
+        %p.tweet
+          Mobile pros out there: How much are you working from your favorite 3rd places this week before the Xmas holiday?
+          %br/
+          %span.tweet-date Dec. 22 at 10:15am
+        %p.tweet
+          Members don’t miss lunch tomorrow. Coco’s Italian Market!
+          %br/
+          %span.tweet-date Dec. 22 at 10:15am
+      .panel.join-panel.radius
+        %h3.title
+          %span.icon.downloads
+          Downloads
+        - 2.times do
+          = link_to "Document", :root, :class => "button radius secondary"
+
+.envy_landing
+  .row
+    .large-12.small-12.columns
+      %h1.eye-catcher Punchy, quick text to draw the audience in immediately.
+      %p= lorem(34)
+  .row
+    .large-6.small-12.columns
+      .panel.radius
+        %p.icon.calendar This is a link for the calendar. Can you come?
+        = link_to "View the Calendar", :root, :class => "button flush radius"
+    .large-6.small-12.columns
+      .panel.radius
+        %p.icon.people Meet our people. They are so friendly.
+        = link_to "Meet Our People", :root, :class => "button flush radius"
+  .row
+    .large-12.small-12.columns
+      .panel.radius
+        %h2.title Services
+        %p.small-12.columns
+          = link_to :root, :class => "right clearfix" do
+            = image_tag "http://placehold.it/250x200.png", :class => "th"
+          = lorem(53)
+        %ul
+          - ["One", "Two", "Three", "Four", "Five"].each do |number|
+            %li= number

@@ -1,0 +1,149 @@
+%h1 Formtastic
+%form#new_gem.formtastic.gem{:action => "#", :method => "get"}
+  %fieldset.inputs
+    %ol
+      %li#gem_summary_input.input.string.stringish.optional
+        %label.label{:for => "gem_summary"} Summary
+        %input#gem_summary{:maxlength => "255", :name => "gem[summary]", :type => "text", :value => "A Rails form builder plugin/gem with semantically rich and accessible markup"}/
+      %li#gem_description_input.input.text.optional
+        %label.label{:for => "gem_description"} Description
+        %textarea#gem_description{:rows => "5"} A Rails form builder plugin/gem with semantically rich and accessible markup
+      %li#gem_url_input.input.url.stringish.optional
+        %label.label{:for => "gem_url"} URL
+        %input#gem_url{:name => "gem[url]", :type => "url"}/
+        %p.inline-hints Example: https://github.com/justinfrench/formtastic
+      %li#gem_password_input.input.password.stringish.required
+        %label.label{:for => "gem_password"}
+          Password
+          %abbr{:title => "required"} *
+        %input#gem_password{:name => "gem[password]", :type => "password"}/
+        %p.inline-errors can't be blank
+      %li#gem_password_input.input.password.stringish.required
+        %label.label{:for => "gem_password_confirmation"}
+          Password confirmation
+          %abbr{:title => "required"} *
+        %input#gem_password_confirmation{:name => "gem[password_confirmation]", :type => "password"}/
+        %p.inline-errors can't be blank
+      %li#gem_downloads_input.input.numeric.stringish.optional
+        %label.label{:for => "gem_downloads"} Downloads
+        %input#gem_downloads{:name => "gem[downloads]", :type => "numeric", :value => "209,354"}/
+      %li#gem_file_input.input.file.optional
+        %label.label{:for => "gem_file"} File
+        %input#gem_file{:name => "gem[file]", :type => "file", :value => "value"}/
+      %li#gem_email_input.input.email.stringish.optional
+        %label.label{:for => "gem_email"} Email
+        %input#gem_email{:name => "gem[email]", :type => "email"}/
+      %li#gem_phone_input.input.phone.stringish.optional
+        %label.label{:for => "gem_phone"} Phone
+        %input#gem_phone{:name => "gem[phone]", :type => "phone"}/
+      %li#gem_search_input.input.search.stringish.optional
+        %label.label{:for => "gem_search"} Search
+        %input#gem_search{:name => "gem[search]", :type => "search"}/
+      %li.input.date.optional
+        %fieldset.fragments
+          %legend.label
+            %label First release
+          %ol.fragments-group
+            %li.fragment
+              %label Year
+              %select#gem_first_release_1i{:name => "gem[first_release][1i]"}
+                %option 2009
+            %li.fragment
+              %label Month
+              %select#gem_first_release_2i{:name => "gem[first_release][2i]"}
+                %option October
+            %li.fragment
+              %label Day
+              %select#gem_first_release_3i{:name => "gem[first_release][3i]"}
+                %option 15
+      %li.input.date_picker.optional
+        %label.label{:for => "gem_expiry"} Expiry date
+        %input#gem_expiry{:max => "2012-12-31", :maxlength => "10", :min => "2012-01-01", :name => "gem[gem_expiry]", :size => "10", :step => "1", :type => "date", :value => "2012-01-01"}/
+      %li.input.datetime_picker.optional
+        %label.label{:for => "gem_expiry"} Expiry datetime-local
+        %input#gem_expiry{:max => "2012-12-31T23:59", :maxlength => "16", :min => "2012-01-01T00:00", :name => "gem[gem_expiry]", :size => "16", :step => "1800", :type => "datetime-local"}/
+      %li.input.datetime_picker.optional
+        %label.label{:for => "gem_expiry"} Expiry datetime
+        %input#gem_expiry{:max => "2012-12-31T23:59", :maxlength => "16", :min => "2012-01-01T00:00", :name => "gem[gem_expiry]", :size => "16", :step => "1800", :type => "datetime"}/
+      %li.input.time_picker.optional
+        %label.label{:for => "gem_expiry"} Expiry time
+        %input#gem_expiry{:max => "23:59", :maxlength => "5", :min => "T00:00", :name => "gem[gem_expiry]", :size => "5", :step => "60", :type => "time"}/
+      %li#gem_autofocus_input.input.string.stringish.optional.autofocus
+        %label.label{:for => "gem_autofocus"} Autofocus
+        %input#gem_autofocus{:autofocus => "autofocus", :name => "gem[autofocus]", :type => "text", :value => "The focus is set to this field"}/
+      %li#gem_terms_and_conditions_input.input.boolean.optional
+        %label{:for => "gem_terms_and_conditions"}
+          %input#gem_terms_and_conditions{:checked => "checked", :name => "gem[terms_and_conditions]", :type => "checkbox", :value => "1"}/
+          I agree to your draconian terms of service even though I didn't read them
+      %li#gem_awesomeness_input.input.select.optional
+        %label.label{:for => "gem_awesomeness"} Select
+        %select#gem_awesomeness{:name => "gem[awesomeness]"}
+          %option{:value => "5"} First choice
+          %option{:value => "4"} Second choice
+      %li.input.radio.optional
+        %fieldset.choices
+          %legend.label
+            %label Rate
+          %ol.choices-group
+            %li.choice
+              %label
+                %input#gem_rate_five{:checked => "checked", :name => "gem[rate]", :type => "radio"}/
+                Five
+            %li.choice
+              %label
+                %input#gem_rate_four{:name => "gem[rate]", :type => "radio"}/
+                Four
+            %li.choice
+              %label
+                %input#gem_rate_three{:name => "gem[rate]", :type => "radio"}/
+                Three
+            %li.choice
+              %label
+                %input#gem_rate_two{:name => "gem[rate]", :type => "radio"}/
+                Two
+            %li.choice
+              %label
+                %input#gem_rate_one{:name => "gem[rate]", :type => "radio"}/
+                One
+      %li.input.check_boxes.optional
+        %fieldset.choices
+          %legend.label
+            %label Browsers
+          %ol.choices-group
+            %li.choice
+              %label
+                %input#gem_browser_google_chrome{:name => "gem[browser][]", :type => "checkbox"}/
+                Google Chrome
+            %li.choice
+              %label
+                %input#gem_browser_apple_safari{:name => "gem[browser][]", :type => "checkbox"}/
+                Apple Safari
+            %li.choice
+              %label
+                %input#gem_browser_mozilla_firefox{:name => "gem[browser][]", :type => "checkbox"}/
+                Mozilla Firefox
+            %li.choice
+              %label
+                %input#gem_browser_opera{:name => "gem[browser][]", :type => "checkbox"}/
+                Opera
+            %li.choice
+              %label
+                %input#gem_browser_internet_explorer{:name => "gem[browser][]", :type => "checkbox"}/
+                Internet Explorer (Although you really can't call it a browser can you? This is some long text to force wrapping.)
+  %fieldset.buttons
+    %ol
+      %li.button.commit
+        %input#gem_submit.create{:type => "submit"}/
+  %fieldset.actions
+    %ol
+      %li.action.input_action
+        %input#gem_submit{:type => "submit", :value => "Create Thing"}/
+  %fieldset.actions
+    %ol
+      %li.action.button_action
+        %button#gem_submit{:type => "submit"} Create Thing
+      %li.action.button_action
+        %button#gem_submit{:type => "reset"} Reset
+      %li.action.link_action
+        = link_to "#" do
+          Cancel

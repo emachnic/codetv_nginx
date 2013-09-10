@@ -1,0 +1,17 @@
+%h2 Resend confirmation instructions
+%form#user_new.user_new{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+  %div{:style => "margin:0;padding:0;display:inline"}
+    %input{:name => "utf8", :type => "hidden", :value => ""}/
+    %input{:name => "authenticity_token", :type => "hidden", :value => "0ew8iN6JEIGcFWwjW1Ed2PyC5Rmmymla9xLQQYPeg3s="}/
+  %div
+    %label{:for => "user_email"} Email
+    %br/
+    %input#user_email{:name => "user[email]", :size => "30", :type => "email", :value => ""}/
+  %div
+    %input{:name => "commit", :type => "submit", :value => "Resend confirmation instructions"}/
+= link_to "Sign in", '/railsthemes/devise-sign_in'
+%br/
+= link_to "Sign up", "/railsthemes/devise-registration"
+%br/
+= link_to "Forgot your password?", "/railsthemes/devise-forgot_password"
+%br/

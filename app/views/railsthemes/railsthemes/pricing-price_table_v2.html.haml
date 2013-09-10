@@ -1,0 +1,70 @@
+%h2 Price Table v2
+%table.responsive.pricing.fullscreen
+  %thead
+    %tr
+      %th
+        %h3 Standard
+      %th
+        %h3 Gold
+      %th
+        %h3 Unlimited
+  %tbody
+    %tr
+      %th Free
+      %th $25 / month
+      %th $50 / month
+    %tr
+      %td 100 visitors
+      %td 150 visitors
+      %td 200 visitors
+    %tr
+      %td 100 GB
+      %td 150 GB
+      %td 200 GB
+    %tr
+      %td 25 images per month
+      %td 50 images per month
+      %td 100 images per month
+  %tfoot
+    %tr
+      %th
+        %div
+          = link_to "Add To Cart", "#", class: "button medium"
+      %th
+        %div
+          = link_to "Add To Cart", "#", class: "button medium"
+      %th
+        %div
+          = link_to "Add To Cart", "#", class: "button medium"
+
+.row
+  .large-4.small-12.columns.mobile
+    %ul.pricing-table
+      %li.title Standard
+      %li.price Free
+      %li.bullet-item 100 visitors
+      %li.bullet-item 100 GB
+      %li.bullet-item 25 images per month
+      %li.cta-button
+        = link_to "#", class: "button" do
+          Add To Cart
+  .large-4.small-12.columns.mobile
+    %ul.pricing-table
+      %li.title Gold
+      %li.price $25 / month
+      %li.bullet-item 150 visitors
+      %li.bullet-item 150 GB
+      %li.bullet-item 50 images per month
+      %li.cta-button
+        = link_to "#", class: "button" do
+          Add To Cart
+  .large-4.small-12.columns.mobile
+    %ul.pricing-table
+      %li.title Unlimited
+      %li.price $50 / month
+      %li.bullet-item 200 visitors
+      %li.bullet-item 200 GB
+      %li.bullet-item 100 images per month
+      %li.cta-button
+        = link_to "#", class: "button" do
+          Add To Cart

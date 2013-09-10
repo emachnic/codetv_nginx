@@ -1,0 +1,15 @@
+%h1 The SASS variable cheatsheet:
+- color_sets = { "Primary Colors" => ["primary-color", "bright-color", "muted-color"],
+                 "Accent Colors" => ["positive-accent", "negative-accent"],
+                 "Monochrome Colors" => ["lightest", "light-neutral", "neutral", "mid-neutral", "mild", "medium-color", "medium-dark", "dark", "darker", "darkest"] }
+
+- color_sets.each_pair do |header, colors|
+  .row
+    .small-12.columns
+      %h2= header
+      %ul.small-block-grid-2.large-block-grid-3
+        - colors.each do |color|
+          %li
+            %div{ :class => "panel fill_#{color}" }
+              %h3= color
+

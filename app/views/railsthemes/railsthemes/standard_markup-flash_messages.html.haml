@@ -1,0 +1,40 @@
+- content_for :page_title, "Error Messages"
+
+%h2 Standard Foundation Alerts
+-#- Copied directly from the foundation docs:
+:plain
+  <div class="alert-box">
+    This is a standard alert (div.alert-box).
+    <a href="" class="close">&times;</a>
+  </div>
+
+  <div class="alert-box success">
+    This is a success alert (div.alert-box.success).
+    <a href="" class="close">&times;</a>
+  </div>
+
+  <div class="alert-box alert">
+    This is an alert (div.alert-box.alert).
+    <a href="" class="close">&times;</a>
+  </div>
+
+  <div class="alert-box secondary">
+    This is a secondary alert (div.alert-box.secondary).
+    <a href="" class="close">&times;</a>
+  </div>
+
+%h2 jQuery UI Highlight/Error
+:plain
+  <div class="ui-widget">
+    <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px;">
+      <p><span class="ui-icon ui-icon-info" style="float: left; margin: 5px 8px 0 0;"></span>
+      <strong>Hey!</strong> Sample ui-state-highlight style.</p>
+    </div>
+  </div>
+  <br/>
+  <div class="ui-widget">
+    <div class="ui-state-error ui-corner-all" style="">
+      <p><span class="ui-icon ui-icon-alert" style="float: left; margin:5px 8px 0 0;"></span>
+      <strong>Alert:</strong> Sample ui-state-error style.</p>
+    </div>
+  </div>

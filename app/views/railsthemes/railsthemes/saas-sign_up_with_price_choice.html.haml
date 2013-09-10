@@ -1,0 +1,67 @@
+.row
+  .large-8.small-12.columns.small-centered.large-centered.panel
+    .row
+      .large-10.small-10.columns.small-centered.large-centered
+        %h3 Register with Us!
+        .row.collapse
+          .large-3.mobile-one.columns
+            %span.prefix Name
+          .large-9.mobile-three.columns
+            %input{ :type => "text" }
+        .row.collapse
+          .large-3.mobile-one.columns
+            %span.prefix Email
+          .large-9.mobile-three.columns
+            %input{ :type => "text" }
+        .row.collapse
+          .large-3.mobile-one.columns
+            %span.prefix Login Name
+          .large-9.mobile-three.columns
+            %input{ :type => "text" }
+        .row.collapse
+          .large-3.mobile-one.columns
+            %span.prefix Password
+          .large-9.mobile-three.columns
+            %input{ :type => "text" }
+        .row.collapse
+          .large-3.mobile-one.columns
+            %span.prefix Confirm Password
+          .large-9.mobile-three.columns
+            %input{ :type => "text" }
+        .row
+          .large-6.small-12.columns
+            %input{ :type => "text", :placeholder => "Promo Code" }
+          .large-6.small-12.columns
+            %p If you have a promo or referral code, please enter it now
+        %hr
+        %form
+          .row
+            %table.large-12.small-12.columns
+              %tr
+                %td
+                  %label{ :for => "foo_basic" }
+                    %input{ :type => "radio", :name => "Foo", :id => "foo_basic" }
+                    Basic
+                %td
+                  %label{ :for => "foo_basic" } Feature 1
+                %td
+                  %label{ :for => "foo_basic" } $20/mo
+              %tr
+                %td
+                  %label{ :for => "foo_better" }
+                    %input{ :type => "radio", :name => "Foo", :id => "foo_better" }
+                    Better
+                %td
+                  %label{ :for => "foo_better" } Feature 1 &amp; 2
+                %td
+                  %label{ :for => "foo_better" } $30/mo
+              %tr
+                %td
+                  %label{ :for => "foo_best" }
+                    %input{ :type => "radio", :name => "Foo", :id => "foo_best" }
+                    Best
+                %td
+                  %label{ :for => "foo_best" } Feature 1, 2 &amp; 3
+                %td
+                  %label{ :for => "foo_best" } $40/mo
+          = link_to "Continue", "#", class: "button"

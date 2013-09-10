@@ -1,0 +1,212 @@
+/* This file is included as part of the Meta theme from
+ RailsThemes.com, which is licensed for use in a single website. The
+ license can be found in the doc folder of this application or at
+ railsthemes.com/terms. */
+
+@import "colors";
+@import "foundation_setup";
+
+/** General Gem Color Selection **/
+$pagination-hover-text: $dark;
+$pagination-hover-border: $darkest;
+$pagination-disabled-text: $neutral;
+$pagination-link-text: $medium-dark;
+
+/** Devise **/
+form {
+  div {
+    label + i {
+      font-size: 85%;
+      color: $muted-color;
+      line-height: 1.75;
+    }
+  }
+}
+
+/** Kaminari **/
+
+nav.pagination {
+  display: block;
+  height: $pagination-height;
+  margin-#{$default-float}: $pagination-margin;
+
+  span {
+    display: block;
+    float: $pagination-li-float;
+    min-height: $pagination-li-height;
+    color: $pagination-li-font-color;
+    font-size: $pagination-li-font-size;
+    line-height: 22px;
+    padding: $pagination-link-pad;
+
+    a {
+      display: block;
+      padding: $pagination-link-pad;
+      color: $pagination-link-font-color;
+    }
+
+    &:hover a, a:focus {
+      background: $pagination-link-active-bg;
+    }
+
+    &.current {
+      background: $pagination-link-current-background;
+      color: $pagination-link-current-font-color;
+      font-weight: $pagination-link-current-font-weight;
+      cursor: $pagination-link-current-cursor;
+
+      &:hover,
+      &:focus { background: $pagination-link-current-active-bg; }
+    }
+  }
+
+}
+
+/** Will Paginate **/
+
+div.pagination {
+  display: block;
+  height: $pagination-height;
+  margin-#{$default-float}: $pagination-margin;
+
+
+  span, em, a {
+    display: block;
+    float: $pagination-li-float;
+    min-height: $pagination-li-height;
+    font-size: $pagination-li-font-size;
+    line-height: 22px;
+    margin-#{$default-float}: $pagination-li-margin;
+
+    padding: $pagination-link-pad;
+
+    &.current {
+      background: $pagination-link-current-background;
+      color: $pagination-link-current-font-color;
+      font-weight: $pagination-link-current-font-weight;
+      cursor: $pagination-link-current-cursor;
+
+      &:hover,
+      &:focus { background: $pagination-link-current-active-bg; }
+    }
+  }
+  span {
+    background: $pagination-link-unavailable-bg-active;
+    color: $pagination-link-unavailable-font-color;
+    cursor: $pagination-link-unavailable-cursor;
+  }
+  em {
+    color: $pagination-li-font-color;
+  }
+  a {
+    padding: $pagination-link-pad;
+    color: $pagination-link-font-color;
+    &:hover,
+    &:focus {
+      background: $pagination-link-active-bg;
+    }
+  }
+}
+
+/** Formtastic **/
+
+.formtastic {
+  label, .label {
+    display: block;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    line-height: 125%;
+    margin-bottom: 4px;
+    background: none;
+    color: $body-font-color;
+    font-weight: 500;
+    padding-left: 0;
+    float: inherit !important;
+  }
+  .fragments .label, .choices .label {
+    position: relative;
+    label {
+      position: relative;
+    }
+  }
+  ol.choices-group, ol.fragments-group {
+    padding: 0;
+    width: 100%;
+  }
+  input, textarea {
+    padding: 0.5em;
+    &[type=file]{
+      padding: 0;
+    }
+  }
+  .boolean label, .choices-group {
+    padding-left: 0;
+  }
+  .buttons, .actions {
+    padding-left: 0;
+    margin-bottom: 15px;
+  }
+  li.button {
+    padding: 0;
+    border: none;
+    .button, button, input[type=submit] {
+      margin: 0;
+    }
+  }
+  .action {
+    a, button {
+      margin-top: 0.75em;
+      padding: 10px 20px 11px;
+      cursor: pointer;
+    }
+  }
+  .input {
+    input {
+      margin-bottom: 0;
+    }
+    select {
+      margin-left: 0.25em;
+    }
+    .inline-errors, .inline-hints {
+      margin: 0
+    }
+  }
+}
+
+/** Simple Form **/
+
+div.input {
+  padding-bottom: 15px;
+}
+select {
+  &.date, &.datetime, &.time {
+    display: inline;
+    width: auto;
+    margin-top: 3px;
+  }
+}
+div {
+  &.form-actions {
+    background-color: transparent; }
+  &.form-inputs {
+    label {
+      margin-bottom: 9px; }
+    select {
+      width: 100px;
+      vertical-align: bottom; }
+    .input {
+      border: 0px !important; } 
+  } 
+}
+p.label {
+  float: left;
+  width: 75px;
+  text-align: right;
+  margin: 2px 10px 0px 0px;
+  background: $neutral;
+  color: $medium-color;
+}
+.control-label {
+  display: block;
+}

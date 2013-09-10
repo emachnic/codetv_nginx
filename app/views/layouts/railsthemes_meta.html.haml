@@ -1,0 +1,84 @@
+!!!
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="gt-ie9" lang="en"> <![endif]-->
+<!--[if gte IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<!--
+This file is included as part of the Meta theme from
+RailsThemes.com, which is licensed for use in a single website. The
+license can be found in the doc folder of this application or at
+railsthemes.com/terms. -->
+%head
+  %meta{:charset => "utf-8"}/
+  %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+  %meta{:content => "Luke Flener, RailsThemes.com", :name => "designer"}/
+  %link{:href => image_path('railsthemes_meta/favicon.ico'), :rel => "icon", :type => "image/x-icon"}/
+  %title
+    \#{title = (yield :title); title.blank? ? "CodeTV Nginx" : title}
+  = csrf_meta_tags
+  = stylesheet_link_tag "railsthemes_meta"
+  = yield :head
+  :plain
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Varela+Round' rel='stylesheet' type='text/css'>
+%body
+  .wrapper
+    #header
+      .contain-to-grid
+        .row
+          .large-4.small-4.columns
+            = link_to :root do
+              .hide-for-small
+                = image_tag 'brackets_banner_logo-black.png', style: 'width:100px;height:100px;'
+              .show-for-small
+                = image_tag 'brackets_banner_logo-black.png', style: 'width:50px;height:50px;'
+          .large-8.small-8.columns
+            - unless content_for?(:without_navigation) || (yield :without_navigation) == true
+              .row
+                %ul.button-group.right.top
+                  %li= link_to "My Account", "#", :class => "button small"
+                  %li= link_to "Support", "#", :class => "button small"
+        = yield :header_highlight if content_for?(:header_highlight)
+    #content
+      .row
+        - if content_for? :sidebar_left
+          #sidebar.large-3.small-12.columns
+            = yield :sidebar_left
+          .large-9.small-12.columns
+            = render 'layouts/flash', :flash => flash
+            = yield
+        - elsif content_for? :sidebar_right
+          .large-8.small-12.columns
+            = render 'layouts/flash', :flash => flash
+            = yield
+          #sidebar.large-4.small-12.columns
+            = yield :sidebar_right
+        - else
+          .large-12.small-12.columns
+            = render 'layouts/flash', :flash => flash
+            = yield
+    .push
+  #footer
+    .row
+      .large-4.small-12.columns
+        %h4 CodeTV Nginx
+        - unless content_for?(:without_navigation) || (yield :without_navigation) == true
+          %p
+            %strong
+              Sign up for our newsletter!
+          %form
+            %input{ :type => "text", :placeholder => "Your Email" }
+            -# an input is the proper way, but for demo purposes, we are leaving
+            -# this out so we can handle multiple theme handling correctly
+            -#%input{ :type => "submit", :class => "button secondary small" }
+            = link_to 'Submit', '/', class: 'button secondary small'
+      - unless content_for?(:without_navigation) || (yield :without_navigation) == true
+        .large-8.small-12.columns
+          %p
+            Copyright &copy;
+            = Time.now.year
+            CodeSchool.  All Rights Reserved.
+  = javascript_include_tag "railsthemes_meta"
+  = yield :scripts
+  = yield :reveal_modals

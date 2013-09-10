@@ -1,0 +1,7 @@
+- flash.each do |type, message|
+  .row
+    .large-12.small-12.columns
+      %div{:id => "flash_#{type}", :class => "alert-box flash #{type}"}
+        = message
+        = link_to "#", class: "close" do
+          &times;

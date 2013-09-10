@@ -1,0 +1,114 @@
+%h1 Simple Form
+%p
+  This is from a sample app. We generated scaffolding (that uses simple_form) for a model we called SwissArmyKnife.
+%p
+  %strong Note:
+  You will have to add class "button" to your submits when using simple form.
+%hr
+
+%h2 New swiss_army_knife
+%form#new_swiss_army_knife.simple_form.new_swiss_army_knife{"accept-charset" => "UTF-8", :action => "#", :method => "post", :novalidate => "novalidate"}
+  .form-inputs
+
+    .input.boolean.optional
+      %input{:name => "swiss_army_knife[overdone]", :type => "hidden", :value => "0"}/
+      %label.boolean.optional.control-label.checkbox{:for => "swiss_army_knife_overdone"}
+        %input#swiss_army_knife_overdone.boolean.optional{:name => "swiss_army_knife[overdone]", :type => "checkbox", :value => "1"}/
+        Overdone
+
+    .input.date.optional
+      %label.date.optional.control-label{:for => "swiss_army_knife_invented_on_1i"} Invented on
+
+      %p.label Year
+      %select#swiss_army_knife_invented_on_1i.date.optional{:name => "swiss_army_knife[invented_on(1i)]"}
+        -year_array = Array(2007..2017)
+        -year_array.each do |year|
+          %option{:value => "#{year}", :selected => "selected"} #{year}
+
+      %br
+      %p.label Month
+      %select#swiss_army_knife_invented_on_2i.date.optional{:name => "swiss_army_knife[invented_on(2i)]"}
+        -month_array = Date::MONTHNAMES[1..12]
+        -month_array.each do |month|
+          %option{:value => "#{month_array.index(month)+1}", :selected => "selected"} #{month}
+
+      %br
+      %p.label Day
+      %select#swiss_army_knife_invented_on_3i.date.optional{:name => "swiss_army_knife[invented_on(3i)]"}
+        -day_array = Array(1..31)
+        -day_array.each do |day|
+          %option{:value => "#{day}", :selected => "selected"} #{day}
+
+    .input.datetime.optional
+      %label.datetime.optional.control-label{:for => "swiss_army_knife_purchased_at_1i"} Purchased on
+
+      %p.label Year
+      %select#swiss_army_knife_purchased_at_1i.datetime.optional{:name => "swiss_army_knife[purchased_at(1i)]"}
+        -year_array.each do |year|
+          %option{:value => "#{year}", :selected => "selected"} #{year}
+
+      %br
+      %p.label Month
+      %select#swiss_army_knife_purchased_at_2i.datetime.optional{:name => "swiss_army_knife[purchased_at(2i)]"}
+        -month_array.each do |month|
+          %option{:value => "#{month_array.index(month)+1}", :selected => "selected"} #{month}
+
+      %br
+      %p.label Day
+      %select#swiss_army_knife_purchased_at_3i.datetime.optional{:name => "swiss_army_knife[purchased_at(3i)]"}
+        -day_array.each do |day|
+          %option{:value => "#{day}", :selected => "selected"} #{day}
+
+      %br
+      %p.label Hour
+      %select#swiss_army_knife_purchased_at_4i.datetime.optional{:name => "swiss_army_knife[purchased_at(4i)]"}
+        -hour_array = Array(0..23)
+        -hour_array.each do |hour|
+          %option{:value => "#{hour}", :selected => "selected"} #{hour}
+
+      %br
+      %p.label Minute
+      %select#swiss_army_knife_purchased_at_5i.datetime.optional{:name => "swiss_army_knife[purchased_at(5i)]"}
+        -minute_array = Array(0..59)
+        -minute_array.each do |minute|
+        -minute = sprintf '%02d', minute
+          %option{:value => "#{minute}", :selected => "selected"} #{minute}
+
+    .input.integer.optional
+      %label.integer.optional.control-label{:for => "swiss_army_knife_number_of_knives"} Number of knives
+      %input#swiss_army_knife_number_of_knives.numeric.integer.optional{:name => "swiss_army_knife[number_of_knives]", :step => "1", :type => "number"}/
+
+    .input.decimal.optional
+      %label.decimal.optional.control-label{:for => "swiss_army_knife_purchase_price"} Purchase price
+      %input#swiss_army_knife_purchase_price.numeric.decimal.optional{:name => "swiss_army_knife[purchase_price]", :step => "any", :type => "number"}/
+
+    .input.float.optional
+      %label.float.optional.control-label{:for => "swiss_army_knife_some_number"} Some number
+      %input#swiss_army_knife_some_number.numeric.float.optional{:name => "swiss_army_knife[some_number]", :step => "any", :type => "number"}/
+
+    .input.string.optional
+      %label.string.optional.control-label{:for => "swiss_army_knife_model_name"} Model name
+      %input#swiss_army_knife_model_name.string.optional{:name => "swiss_army_knife[model_name]", :size => "50", :type => "text"}/
+
+    .input.text.optional
+      %label.text.optional.control-label{:for => "swiss_army_knife_description"} Description
+      %textarea#swiss_army_knife_description.text.optional{:cols => "40", :name => "swiss_army_knife[description]", :rows => "20"}
+        :preserve
+
+    .input.time.optional
+      %label.time.optional.control-label{:for => "swiss_army_knife_dinner_time_4i"} Dinner time
+
+      %p.label Hour
+      %select#swiss_army_knife_dinner_time_4i.time.optional{:name => "swiss_army_knife[dinner_time(4i)]"}
+        -hour_array.each do |hour|
+          %option{:value => "#{hour}", :selected => "selected"} #{hour}
+
+      %br
+      %p.label Minute
+      %select#swiss_army_knife_dinner_time_5i.time.optional{:name => "swiss_army_knife[dinner_time(5i)]"}
+        -minute_array.each do |minute|
+        -minute = sprintf '%02d', minute
+          %option{:value => "#{minute}", :selected => "selected"} #{minute}
+
+  .form-actions
+    %input.btn.button{:name => "commit", :type => "submit", :value => "Create Swiss army knife"}/

@@ -1,0 +1,309 @@
+%h1 Various Foundation-Specific Markup:
+%p Most of these examples are taken directly from the Foundation docs.
+%h2 Tooltips
+%p
+  This is an example of
+  %span{ :data => { :tooltip => true }, :class => "has-tip", :title => "Tooltips are awesome, you should totally use them!" }
+    extended information.
+
+%h2 Switches
+:plain
+  <!-- Default switch -->
+  <div class="switch tiny large-1">
+    <input id="x" name="switch-x" type="radio" checked>
+    <label for="x" onclick="">Off</label>
+
+    <input id="x1" name="switch-x" type="radio">
+    <label for="x1" onclick="">On</label>
+
+    <span></span>
+  </div>
+
+  <!-- Using class options -->
+  <div class="switch large round large-1">
+    <input id="z" name="switch-z" type="radio">
+    <label for="z" onclick="">Off</label>
+
+    <input id="z1" name="switch-z" type="radio" checked>
+    <label for="z1" onclick="">On</label>
+
+    <span></span>
+  </div>
+
+%h2 Subnavigation
+:plain
+  <dl class="sub-nav">
+    <dt>Filter:</dt>
+    <dd class="active"><a href="#">All</a></dd>
+    <dd><a href="#">Active</a></dd>
+    <dd><a href="#">Pending</a></dd>
+    <dd><a href="#">Suspended</a></dd>
+  </dl>
+
+%h2 Sections
+%p
+  %em Sections replace Accordion, Tabs, Vertical Nav &amp; Nav Bar from Foundation 2/3
+:plain
+  <div class="row">
+    <div class="large-3 columns">
+      <div class="section-container vertical-nav" data-section="vertical-nav" style="">
+        <section class="section">
+          <p class="title" style="left: 0px;"><a href="#">Section 1</a></p>
+          <div class="content" style="">
+            <ul class="side-nav">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Link 1</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="section">
+          <p class="title" style="left: 178px;"><a href="#">Section 2</a></p>
+          <div class="content" style="">
+            <ul class="side-nav">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Link 1</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="large-9 columns">
+      <div class="section-container horizontal-nav" data-section="horizontal-nav" style="height: 50px;">
+        <section class="section">
+          <p class="title" style="left: 0px;"><a href="#">Section 1</a></p>
+          <div class="content" style="left: -1px; top: 48px;">
+            <ul class="side-nav">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Link 1</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="section">
+          <p class="title" style="left: 87px;"><a href="#">Section 2</a></p>
+          <div class="content" style="left: 86px; top: 48px;">
+            <ul class="side-nav">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Link 1</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+        <div class="section-container auto" data-section="" data-options="deep_linking: true;" style="">
+          <section class="section active" style="padding-top: 49px;">
+            <p class="title" style="left: 0px;"><a href="#panel1">Tab Section 1</a></p>
+            <div class="content" data-slug="panel1" style="">
+              <p>Section 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </section>
+          <section class="section">
+            <p class="title" style="left: 87px;"><a href="#panel2">Tab Section 2</a></p>
+            <div class="content" data-slug="panel2" style="">
+              <p>Section 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </section>
+          <div class="section">
+            <p class="title" style="left: 174px;"><a href="#panel3">Tab Section 3</a></p>
+            <div class="content" data-slug="panel3" style="">
+              <form>
+                <div class="row collapse">
+                  <div class="large-2 columns">
+                    <label class="inline">Your Name</label>
+                  </div>
+                  <div class="large-10 columns">
+                    <input type="text" id="yourName" placeholder="Jane Smith">
+                  </div>
+                </div>
+                <div class="row collapse">
+                  <div class="large-2 columns">
+                    <label class="inline"> Your Email</label>
+                  </div>
+                  <div class="large-10 columns">
+                    <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+                  </div>
+                </div>
+                <label>What's up?</label>
+                <textarea rows="4"></textarea>
+                <button type="submit" class="radius button">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-3 columns">
+      <div class="section-container accordion" data-section>
+        <section class="section active">
+          <p class="title"><a href="#">Accordion Section 1</a></p>
+          <div class="content">
+            <p>Content of section 1.</p>
+          </div>
+        </section>
+        <section class="section">
+          <p class="title"><a href="#">Accordion Section 2</a></p>
+          <div class="content">
+            <p>Content of section 2.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+%h2 Reveal Modals
+- content_for :reveal_modals do
+  :plain
+    <div id="myModal" class="reveal-modal">
+    <h2>Awesome. I have it.</h2>
+    <p class="lead">Your couch.  It is mine.</p>
+    <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+    <a class="close-reveal-modal">&#215;</a>
+    </div>
+:plain
+  <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+%h2 Progress Bars
+:plain
+  <div class="progress large-6"><span class="meter" style="width: 40%"></span></div>
+  <div class="progress large-6 success round"><span class="meter" style="width: 60%"></span></div>
+  <div class="nice round progress alert large-10"><span class="meter" style="width: 30%"></span></div>
+  <div class="nice secondary progress"><span class="meter" style="width: 50%"></span></div>
+
+%h2 Simple Pricing Table
+.row
+  .large-3.small-12
+    :plain
+      <ul class="pricing-table">
+      <li class="title">Standard</li>
+      <li class="price">$99.99</li>
+      <li class="description">An awesome description</li>
+      <li class="bullet-item">1 Database</li>
+      <li class="bullet-item">5GB Storage</li>
+      <li class="bullet-item">20 Users</li>
+      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+      </ul>
+
+%h2 Pagination
+%p We also have pagination styles specifically for Kaminari and Will Paginate, so you don't have to worry about conforming to the Foundation markup
+:plain
+  <ul class="pagination">
+    <li class="arrow unavailable"><a href="#">&laquo;</a></li>
+    <li class="current"><a href="">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li class="unavailable"><a href="">&hellip;</a></li>
+    <li><a href="#">12</a></li>
+    <li><a href="#">13</a></li>
+    <li class="arrow"><a href="#">&raquo;</a></li>
+  </ul>
+%h2 Orbit
+%p See the slideshow landing page
+%h2 Clearing
+%p This is an image gallery plugin included with Foundation.
+.row
+  .large-12.columns
+    :plain
+      <ul class="clearing-thumbs" data-clearing>
+        <li><a class="th" href="/assets/railsthemes/sample_images/demo1.jpg"><img data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." src="/assets/railsthemes/sample_images/demo1-th.jpg"></a></li>
+        <li><a class="th" href="/assets/railsthemes/sample_images/demo2.jpg"><img src="/assets/railsthemes/sample_images/demo2-th.jpg"></a></li>
+        <li><a class="th" href="/assets/railsthemes/sample_images/demo3.jpg"><img data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." src="/assets/railsthemes/sample_images/demo3-th.jpg"></a></li>
+        <li><a class="th" href="/assets/railsthemes/sample_images/demo4.jpg"><img src="/assets/railsthemes/sample_images/demo4-th.jpg"></a></li>
+        <li><a class="th" href="/assets/railsthemes/sample_images/demo5.jpg"><img data-caption="Integer posuere erat a ante venenatis dapibus posuere velit aliquet." src="/assets/railsthemes/sample_images/demo5-th.jpg"></a></li>
+      </ul>
+%h2 Breadcrumbs
+:plain
+  <ul class="breadcrumbs">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Features</a></li>
+    <li class="unavailable"><a href="#">Gene Splicing</a></li>
+    <li class="current"><a href="#">Cloning</a></li>
+  </ul>
+%h2 Split Buttons
+:plain
+  <a href="#" class="tiny button split">Split Button <span data-dropdown="sdrop"></span></a><br>
+  <a href="#" class="small secondary radius button split">Split Button <span data-dropdown="sdrop2"></span></a><br>
+  <a href="#" class="button alert round split">Split Button <span data-dropdown="sdrop3"></span></a><br>
+  <a href="#" class="large success button split">Split Button <span data-dropdown="sdrop4"></span></a><br>
+  <ul id="sdrop" class="f-dropdown" data-dropdown-content>
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="sdrop1" class="f-dropdown" data-dropdown-content>
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="sdrop2" class="f-dropdown" data-dropdown-content>
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="sdrop3" class="f-dropdown" data-dropdown-content>
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="sdrop4" class="f-dropdown" data-dropdown-content>
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+%h2 Dropdown Buttons
+:plain
+  <a href="#" data-dropdown="drop" class="tiny button dropdown">Dropdown Button</a><br>
+  <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">Dropdown Button</a><br>
+  <a href="#" data-dropdown="drop3" class="button alert round dropdown">Dropdown Button</a><br>
+  <a href="#" data-dropdown="drop4" class="large success button dropdown">Dropdown Button</a><br>
+  <a href="#" data-dropdown="drop5" class="large button dropdown expand">Dropdown Button</a><br>
+  <ul id="drop" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="drop1" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="drop2" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="drop3" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="drop4" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+  <ul id="drop5" data-dropdown-content class="f-dropdown">
+    <li><a href="#">This is a link</a></li>
+    <li><a href="#">This is another</a></li>
+    <li><a href="#">Yet another</a></li>
+  </ul>
+%h2 Microformats
+:plain
+  <ul class="vcard">
+    <li class="fn">Gaius Baltar</li>
+    <li class="street-address">123 Colonial Ave.</li>
+    <li class="locality">Caprica City</li>
+    <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
+    <li class="email"><a href="#">g.baltar@cmail.com</a></li>
+  </ul>

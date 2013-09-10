@@ -1,0 +1,30 @@
+.small-12.columns
+  %form
+    .section-container.auto{ "data-section" => "" }
+      .section
+        %p.title{ "data-section-title" => "" }
+          = link_to 'Address', '#form-1'
+        .content{ "data-section-content" => "" }
+          = render :partial => 'address'
+          %br
+      .section
+        %p.title{ "data-section-title" => "" }
+          = link_to 'Shipping Method', '#form-2'
+        .content{ "data-section-content" => "" }
+          = render :partial => 'shipping_method'
+      .section
+        %p.title{ "data-section-title" => "" }
+          = link_to 'Payment', '#form-3'
+        .content{ "data-section-content" => "" }
+          = render :partial => 'payment'
+      .section
+        %p.title{ "data-section-title" => "" }
+          = link_to 'Review', '#form-4'
+        .content{ "data-section-content" => "" }
+          = render :partial => 'review'
+  %hr
+.row#contact-us
+  .large-12.columns
+    Questions?
+    %br
+    = link_to 'Contact Us', '#'

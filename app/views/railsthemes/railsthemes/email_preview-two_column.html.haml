@@ -1,0 +1,9 @@
+.row
+  .small-12.columns
+    %h1 Preview Two-Column Email
+
+    %p Enter your address and a sample email will be sent to you.
+    = form_tag('/railsthemes/send_email_two_column') do |f|
+      %div= label_tag 'email', 'Email to send to'
+      %div= email_field_tag 'email'
+      %div= submit_tag 'Send'

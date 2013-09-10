@@ -1,0 +1,22 @@
+%nav.top-bar{ style: 'height: 45px; overflow: hidden' }
+  %ul.title-area
+    %li.name
+      %h1= link_to('Top Bar Title')
+    %li.toggle-topbar.menu-icon
+      = link_to(raw('<span>Menu</span>'), '#')
+
+  .section.top-bar-section
+    %ul.left
+      %li.divider
+      %li.active= link_to('Item 1', '#')
+      %li= link_to('Item 2', '#')
+      %li.divider
+      %li.has-dropdown
+        = link_to('Item 3')
+        %ul.dropdown
+          %li= link_to('Sub Item 1')
+          %li= link_to('Sub Item 2')
+  .section.top-bar-section
+    %ul.right
+      %li.divider
+      %li= link_to('Item 4')

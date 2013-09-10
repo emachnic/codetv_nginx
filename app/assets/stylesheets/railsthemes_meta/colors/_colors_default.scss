@@ -1,0 +1,62 @@
+/* This file is included as part of the Meta theme from
+ RailsThemes.com, which is licensed for use in a single website. The
+ license can be found in the doc folder of this application or at
+ railsthemes.com/terms. */
+
+/* Monochromes */
+$lightest: #ffffff;
+$neutral: #ebebeb;
+$mild: #959595;
+$medium-color: #7d7d7d;
+$dark: #404040;
+$darkest: #111111;
+
+/* Monochrome Mixes */
+$light-neutral: mix($lightest, $neutral); /* #f5f5f5 */
+$mildest: mix($lightest, $mild);
+$mid-neutral: mix($neutral, $mild, 80%);  /* #d9d9d9 */
+$medium-dark: mix($medium-color, $dark);  /* #5e5e5e */
+$darker: mix($dark, $darkest);            /* #282828 */
+
+
+/* Color Scheme, used by us */
+$primary-color: #bf1e2e;
+$bright-color: $primary-color;
+$muted-color: #871520;
+$positive-accent: #08608C;
+$negative-accent: $primary-color;
+
+/* Global Theme Settings */
+$main-nav-background: $primary-color;
+$main-nav-text: $neutral;
+$main-nav-padding: 15px;
+
+/* Foundation-specific Color Settings */
+/* $primary-color is already set in our general colors, so we don't set it here; */
+$secondary-color: mix($neutral, $dark);
+$alert-color: $negative-accent;
+$success-color: $positive-accent;
+
+$body-bg: $lightest;
+$body-font-color: $dark;
+$body-font-family: "Varela","proxima-nova",sans-serif;
+
+$header-font-family: "Varela","proxima-nova",sans-serif;
+$header-font-color: $body-font-color;
+$header-top-margin: 0em;
+$header-bottom-margin: .5em;
+$header-text-rendering: auto;
+$header-text-rendering: optimizeLegibility;
+
+$sans-serif-font-family: Helvetica, Arial, sans-serif;
+
+
+$input-font-color: $darkest;
+$button-border-width: 2px;
+$button-border-style: solid;
+$button-border-color: #7f0714;
+$button-radius: 20px;
+$thumb-box-shadow: 0 0 5px rgba(0,0,0,.75);
+$thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+
+$featured-pricing-level: 2;

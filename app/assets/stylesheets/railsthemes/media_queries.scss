@@ -1,0 +1,45 @@
+/* This file is included as part of the themes from
+ RailsThemes.com, which are licensed for use in a single website. The
+ license can be found in the doc folder of this application or at
+ railsthemes.com/terms. */
+
+/* Media Queries */
+
+@media (max-width: 800px) {
+  .medium-6 {
+    width: 50%;
+  }
+}
+@media (max-width: 800px) and (min-width: 500px) {
+  .medium-12 {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 500px) {
+  .text-centered-small {
+    text-align: center;
+  }
+  .left-small {
+    left: 0;
+  }
+  .small-12 {
+    width: 100%;
+  }
+  .mobile-disappear {
+    display: none;
+  }
+  .mobile-expand {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 100%;
+    float: left;
+  }
+  .mobile-margin-top {
+    margin-top: 25px;
+  }
+  h5.title {
+    font-size: 99%;
+  }
+}

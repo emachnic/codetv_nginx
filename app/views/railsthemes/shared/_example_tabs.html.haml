@@ -1,0 +1,23 @@
+.example-set
+  .section-container.tabs{ "data-section" => "tabs" }
+    .section
+      %p.title{ "data-section-title" => "" }
+        = link_to('Preview', "##{rel}", :class => 'preview-code')
+      .content{ "data-section-content" => "" }
+        = preview
+      %p.title
+    - examples.each do |format, example|
+      .section
+        %p.title{ "data-section-title" => "" }
+          = link_to(format, "##{rel}", :class => link_opts[:class], :rel => link_opts[:rel] % format, :'data-reveal-id' => (link_opts[:reveal_id] ? link_opts[:reveal_id] % format : nil))
+        .content{ "data-section-content" => "" }
+          .source-code
+            = render :partial => 'railsthemes/shared/coderay_table', :locals => example
+
+= content_for :reveal_modals do
+  - examples.each do |format, example|
+    .reveal-modal.xlarge.example{ :id => "#{rel}-#{format}-modal" }
+      %h3= "#{title} Form"
+      %p.lead= format
+      = render :partial => 'railsthemes/shared/coderay_table', :locals => example
+      = link_to raw('&#215;'), "##{rel}", :class => 'close-reveal-modal'

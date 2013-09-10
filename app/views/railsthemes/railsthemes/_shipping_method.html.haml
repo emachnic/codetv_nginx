@@ -1,0 +1,7 @@
+%h3 Shipping Method
+%h4 Shipping Options
+- (1..5).to_a.each do |x|
+  %label
+    %input{ :type => "checkbox" }
+    Shipping Option ##{x}
+  %br

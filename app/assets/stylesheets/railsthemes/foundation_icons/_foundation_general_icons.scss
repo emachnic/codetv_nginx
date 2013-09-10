@@ -1,0 +1,151 @@
+/* Foundation General Icons: */
+$fontFileName: "railsthemes/foundation_icons/general_enclosed_foundicons";
+$fontName: "GeneralEnclosedFoundicons";
+$classPrefix: "foundicon-general-";
+
+@mixin i-class($name,$pua) {
+  .#{$classPrefix}#{$name}:before {
+    content: "\f#{$pua}";
+  }
+}
+
+@mixin ie-class($name,$pua) {
+  .#{$classPrefix}#{$name} {
+    *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = "&#xf#{$pua};");
+  }
+}
+
+@font-face {
+  font-family: $fontName;
+  src: font-url('#{$fontFileName}.eot');
+  src: font-url('#{$fontFileName}.eot?#iefix') format('embedded-opentype'),
+       font-url('#{$fontFileName}.woff') format('woff'),
+       font-url('#{$fontFileName}.ttf') format('truetype'),
+       font-url('#{$fontFileName}.svg##{$fontName}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* global foundicon styles */
+[class*="#{$classPrefix}"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* general icons */
+@include i-class(settings,"000");
+@include i-class(heart,"001");
+@include i-class(star,"002");
+@include i-class(plus,"003");
+@include i-class(minus,"004");
+@include i-class(checkmark,"005");
+@include i-class(remove,"006");
+@include i-class(mail,"007");
+@include i-class(calendar,"008");
+@include i-class(page,"009");
+@include i-class(tools,"00a");
+@include i-class(globe,"00b");
+@include i-class(home,"00c");
+@include i-class(quote,"00d");
+@include i-class(people,"00e");
+@include i-class(monitor,"00f");
+@include i-class(laptop,"010");
+@include i-class(phone,"011");
+@include i-class(cloud,"012");
+@include i-class(error,"013");
+@include i-class(right-arrow,"014");
+@include i-class(left-arrow,"015");
+@include i-class(up-arrow,"016");
+@include i-class(down-arrow,"017");
+@include i-class(trash,"018");
+@include i-class(add-doc,"019");
+@include i-class(edit,"01a");
+@include i-class(lock,"01b");
+@include i-class(unlock,"01c");
+@include i-class(refresh,"01d");
+@include i-class(paper-clip,"01e");
+@include i-class(video,"01f");
+@include i-class(photo,"020");
+@include i-class(graph,"021");
+@include i-class(idea,"022");
+@include i-class(mic,"023");
+@include i-class(cart,"024");
+@include i-class(address-book,"025");
+@include i-class(compass,"026");
+@include i-class(flag,"027");
+@include i-class(location,"028");
+@include i-class(clock,"029");
+@include i-class(folder,"02a");
+@include i-class(inbox,"02b");
+@include i-class(website,"02c");
+@include i-class(smiley,"02d");
+@include i-class(search,"02e");
+
+.lt-ie9 {
+  /* icons for IE7 */
+  [class*="#{$classPrefix}"] {
+    font-family: $fontName;
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* general icons */
+  @include ie-class(settings,"000");
+  @include ie-class(heart,"001");
+  @include ie-class(star,"002");
+  @include ie-class(plus,"003");
+  @include ie-class(minus,"004");
+  @include ie-class(checkmark,"005");
+  @include ie-class(remove,"006");
+  @include ie-class(mail,"007");
+  @include ie-class(calendar,"008");
+  @include ie-class(page,"009");
+  @include ie-class(tools,"00a");
+  @include ie-class(globe,"00b");
+  @include ie-class(home,"00c");
+  @include ie-class(quote,"00d");
+  @include ie-class(people,"00e");
+  @include ie-class(monitor,"00f");
+  @include ie-class(laptop,"010");
+  @include ie-class(phone,"011");
+  @include ie-class(cloud,"012");
+  @include ie-class(error,"013");
+  @include ie-class(right-arrow,"014");
+  @include ie-class(left-arrow,"015");
+  @include ie-class(up-arrow,"016");
+  @include ie-class(down-arrow,"017");
+  @include ie-class(trash,"018");
+  @include ie-class(add-doc,"019");
+  @include ie-class(edit,"01a");
+  @include ie-class(lock,"01b");
+  @include ie-class(unlock,"01c");
+  @include ie-class(refresh,"01d");
+  @include ie-class(paper-clip,"01e");
+  @include ie-class(video,"01f");
+  @include ie-class(photo,"020");
+  @include ie-class(graph,"021");
+  @include ie-class(idea,"022");
+  @include ie-class(mic,"023");
+  @include ie-class(cart,"024");
+  @include ie-class(address-book,"025");
+  @include ie-class(compass,"026");
+  @include ie-class(flag,"027");
+  @include ie-class(location,"028");
+  @include ie-class(clock,"029");
+  @include ie-class(folder,"02a");
+  @include ie-class(inbox,"02b");
+  @include ie-class(website,"02c");
+  @include ie-class(smiley,"02d");
+  @include ie-class(search,"02e");
+}

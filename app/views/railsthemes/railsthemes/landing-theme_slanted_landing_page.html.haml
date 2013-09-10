@@ -1,0 +1,26 @@
+- content_for :header_highlight do
+  .header_highlight
+    .row
+      .large-8.columns
+        .row
+          .large-12.small-12.columns
+            .orbit-no-arrows.border
+              %ul{ "data-orbit" => "true" }
+                - 4.times do |counter|
+                  %li
+                    = image_tag "http://placehold.it/600x400/ccc/ffffff&text=[+Image+#{counter + 1}+]", style: "width: 100%"
+      .large-4.columns
+        %h4 Sign up now and get some goodies
+        %p= lorem(60)
+        = link_to "Learn more", "#"
+.center-text
+  %h2 Features
+.row
+  - 6.times do
+    .large-4.columns
+      = image_tag "http://placehold.it/600x400/ccc/fff&text=[+Image+]", style: "width: 100%", class: "border"
+      %h5 Excellent Feature
+      %p= lorem(12)
+.row
+  .right
+    = link_to "Learn More", "#", class: "button"

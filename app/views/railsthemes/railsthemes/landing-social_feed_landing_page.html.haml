@@ -1,0 +1,64 @@
+.large-3.small-12.columns
+  .panel
+    -image="http://placehold.it/500x500&text=Image"
+    = image_tag image
+    %h4 Your Name
+    %dl{class: "vertical tabs"}
+      %dd{class: "active"}
+        %a Section Link
+      -5.times do
+        %dd
+          %a Section Link
+.large-6.small-12.columns
+  .large-2.small-12.columns
+    = image_tag image
+  .large-10.small-12.columns
+    %p
+      %strong Some person said:
+      = lorem(20)
+    = link_to "Reply", "#"
+    = link_to "Share", "#"
+    %br
+    %br
+    .strong
+      2 Comments
+    %br
+    - 2.times do
+      .large-2.small-12.columns
+        = image_tag image
+      .large-10.small-12.columns
+        %p= lorem(20)
+  %hr.greyscale
+  .large-2.small-12.columns
+    = image_tag image
+  .large-10.small-12.columns
+    %p
+      %strong Some person said:
+      = lorem(20)
+    = link_to "Reply", "#"
+    = link_to "Share", "#"
+    %br
+    %br
+  %hr.greyscale
+  .large-2.small-12.columns
+    = image_tag image
+  .large-10.small-12.columns
+    %p
+      %strong Some person said:
+      = lorem(20)
+    = link_to "Reply", "#"
+    = link_to "Share", "#"
+    %br
+    %br
+    .strong
+      2 Comments
+    %br
+    -2.times do
+      .large-2.small-12.columns
+        = image_tag image
+      .large-10.small-12.columns
+        %p= lorem(20)
+.large-3.small-12.columns
+  -2.times do
+    .panel
+      = image_tag "http://placehold.it/500x1300&text=Ad"

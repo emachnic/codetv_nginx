@@ -1,0 +1,18 @@
+.row
+  .large-6.small-6.columns
+    %h1 Features
+  .large-6.small-6.columns
+    = link_to "View Themes", "#", :class => "button secondary right"
+#alternating_features
+  - 3.times do
+    .large-12.small-12.columns.feature_set.panel
+      %h2.majorheading Section Name
+      - 3.times do
+        .row.feature
+          .explanation.large-6.small-12.columns
+            %h3 Feature Title
+            %p No more manually moving files into the right directory and trying to hook them up just right. RailsThemes.com comes with a command-line installer to get you up and running fast.
+            %p The installer supports Rails 3.1+ and Ruby 1.8.7+.
+          .example.large-6.small-12.columns
+            = image_tag "http://placehold.it/500x250&text=Image"
+        %hr.greyscale

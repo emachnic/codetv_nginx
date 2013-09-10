@@ -1,0 +1,23 @@
+%h2 Sign up
+%form#user_new.user_new{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+  %div{:style => "margin:0;padding:0;display:inline"}
+    %input{:name => "utf8", :type => "hidden", :value => ""}/
+    %input{:name => "authenticity_token", :type => "hidden", :value => "rl4jFltMRM84mHyBdcdZFcBQYx4EWNBztA+kNf4jGWM="}/
+  %div
+    %label{:for => "user_email"} Email
+    %br/
+    %input#user_email{:name => "user[email]", :size => "30", :type => "email", :value => ""}/
+  %div
+    %label{:for => "user_password"} Password
+    %br/
+    %input#user_password{:name => "user[password]", :size => "30", :type => "password"}/
+  %div
+    %label{:for => "user_password_confirmation"} Password confirmation
+    %br/
+    %input#user_password_confirmation{:name => "user[password_confirmation]", :size => "30", :type => "password"}/
+  %div
+    %input{:name => "commit", :type => "submit", :value => "Sign up"}/
+= link_to "Sign in", "/railsthemes/devise-sign_in"
+%br/
+= link_to "Forgot your password?", "/railsthemes/devise-forgot_password"
+%br/

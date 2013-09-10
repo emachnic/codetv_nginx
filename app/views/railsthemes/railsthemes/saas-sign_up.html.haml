@@ -1,0 +1,45 @@
+- content_for :without_navigation, true
+.row
+  .large-6.small-12.columns.small-centered.large-centered
+    =image_tag "http://placehold.it/1000x400&text=[Logo]"
+  %br
+.panel
+  .row
+    .large-6.small-12.columns
+      %h3 Let's get started
+      %p= lorem(27)
+      %ul.plain
+        %li
+          %span.alert.label.radius New
+          Super Feature
+        - 3.times do
+          %li
+            Feature
+    .large-6.small-12.columns
+      .row
+        .large-12.small-12.columns
+          %h3 Fill in your information
+        .large-6.small-6.columns
+          %input{ :type => "text", :placeholder => "First Name" }
+        .large-6.small-6.columns
+          %input{ :type => "text", :placeholder => "Last Name" }
+        .large-12.small-12.columns
+          %input{ :type => "text", :placeholder => "Email" }
+        .large-12.small-12.columns
+          %input{ :type => "text", :placeholder => "Password" }
+        .large-12.small-12.columns
+          = link_to "Signup", "#", class: "button"
+      .row
+        .large-12.small-12.columns
+          %h5.centered
+          .horizontal-lines
+            %p OR
+      .row
+        .large-6.small-12.columns
+          = link_to "#", class: "button expand secondary" do
+            %i.foundicon-twitter
+            Twitter Signin
+        .large-6.small-12.columns
+          = link_to "#", class: "button expand secondary" do
+            %i.foundicon-facebook
+            Facebook Signin

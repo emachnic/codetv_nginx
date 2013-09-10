@@ -1,0 +1,8 @@
+%code
+  %table.CodeRay
+    %tr
+      %td.line-numbers
+        - 1.upto(linecount) do |n|
+          %p= n
+      %td.code
+        %pre= code

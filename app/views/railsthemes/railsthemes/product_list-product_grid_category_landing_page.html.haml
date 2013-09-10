@@ -1,0 +1,31 @@
+- content_for :sidebar_left do
+  =link_to "Cart", "#", :class => "button"
+  %ul.side-nav
+    %li= link_to "All Products", "#"
+    %li.divider
+    %li= link_to "New", "#"
+    %li= link_to "Stuff", "#"
+    %li.active
+      = link_to "Women's Clothing", "#"
+      %ul
+        %li= link_to "Dresses", "#"
+        %li= link_to "Career", "#"
+        %li= link_to "Accessories", "#"
+    %li= link_to "Mens's Clothing", "#"
+    %li= link_to "Children's Clothing", "#"
+    %li= link_to "Home Goods", "#"
+    %li= link_to "Specials", "#"
+
+.row
+  .large-12.small-12.columns
+    %h2 Women's Clothing
+    = image_tag "http://placehold.it/720x210&text=[Product+Line]", :class => "prod-image"
+    .panel
+      %h4 The Best in the Land!
+.row
+  - 6.times do
+    .large-4.small-12.columns.prod-summary
+      = image_tag "http://placehold.it/500x500&text=[Product+Image]", :class => "prod-image"
+      .prod-description
+        %h5.prod-name Wonderful Product
+        %p.prod-price $19.99

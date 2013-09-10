@@ -1,0 +1,77 @@
+%h2 Price Table v1
+%table.pricing.with_features_column.fullscreen
+  %thead
+    %tr
+      %th
+        %h3 Features
+      %th
+        %h3 Standard
+      %th
+        %h3 Premium
+      %th
+        %h3 Pro
+  %tbody
+    %tr
+      %th Feature 1
+      %td &#10003;
+      %td &#10003;
+      %td &#10003;
+    %tr
+      %th Feature 2
+      %td &#10003;
+      %td &#10003;
+      %td &#10003;
+    %tr
+      %th Feature 3
+      %td
+      %td &#10003;
+      %td &#10003;
+    %tr
+      %th Feature 4
+      %td
+      %td &nbsp;
+      %td &#10003;
+  %tfoot
+    %tr
+      %th Price
+      %th
+        %div $10
+      %th
+        %div $20
+      %th
+        %div $45
+
+.row
+  .with_features_column.columns.mobile
+    .large-3.small-12.columns
+      %ul.header
+        %li.title &nbsp;
+        %li.title Feature 1
+        %li.title Feature 2
+        %li.title Feature 3
+        %li.title Feature 4
+        %li.title.footer Price
+    .large-3.small-12.columns
+      %ul.body#standard
+        %li.title Standard
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.bullet-item &nbsp;
+        %li.bullet-item &nbsp;
+        %li.price.footer $10
+    .large-3.small-12.columns
+      %ul.body#premium
+        %li.title Premium
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.bullet-item &nbsp;
+        %li.price.footer $20
+    .large-3.small-12.columns
+      %ul.body#pro
+        %li.title Pro
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.bullet-item &#10003;
+        %li.price.footer $45

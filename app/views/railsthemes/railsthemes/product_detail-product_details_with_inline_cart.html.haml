@@ -1,0 +1,83 @@
+.row
+  .small-12.columns
+    %ul.breadcrumbs
+      - ["Home", "Shoes", "Adidas", "Summer Shoes"].each do |breadcrumb|
+        %li= link_to "#{breadcrumb}", "#"
+.row
+  .large-4.small-12.columns
+    .row
+      .large-12.small-12.columns
+        = image_tag "http://placehold.it/500x500", :style => "margin-bottom: 20px;"
+    .row
+      .large-12.small-12.columns
+        %ul.small-block-grid-4.large-block-grid-4
+          - 4.times do
+            %li= image_tag "http://placehold.it/500x500", :class => "prod-image"
+    .row
+      .large-12.small-12.columns
+        = link_to "Search", "#", class: "button medium"
+        = link_to "Add to Wish List", "#", class: "button medium"
+  .large-8.small-12.columns
+    .row
+      .large-8.small-12.columns
+        %h2 Great Shoes
+        %p.price $65
+        %p
+          = link_to "10 reviews", "#"
+          |
+          = link_to "Write a review", "#"
+        %p
+          Free Shipping on Orders of $49 (
+          = link_to "See Details", "#"
+          )
+        %form
+          .row
+            .large-6.small-6.columns
+              %label Color
+              %select
+                %option
+                  = image_tag "http://placehold.it/20x20/000000/000000"
+                  Black
+            .large-3.small-3.columns
+              %label Size
+              %select
+                %option 8.5
+            .large-3.small-3.columns
+              %label Quantity
+              %select
+                %option 2
+        - 2.times do
+          %p= lorem(60)
+        = link_to "More info", "#"
+      .large-4.small-12.columns.mobile-margin-top
+        .share
+        - sharing_verbs = ["Pin It", "Tweet", "Share", "Copy URL"]
+        - sharing_verbs.each do |verb|
+          %button= verb
+          %br
+        %hr
+        .cart_summary.panel
+          %h4 Cart Summary
+          %hr
+          - 3.times do
+            .row
+              .large-4.small-4.columns
+                = image_tag "http://placehold.it/500x500"
+              .large-5.small-5.columns
+                %p Product
+              .large-2.small-2.columns
+                = link_to do
+                  x
+          .row
+            %table.large-12.small-12.columns.mobile-margin-top
+              %tr
+                %th Subtotal
+                %td $40
+              %tr
+                %th Taxes
+                %td $40
+              %tr
+                %th Total
+                %td $80
+          .row
+            = link_to "Checkout", "#", class: "button medium"

@@ -1,0 +1,16 @@
+.source-code
+  %code
+    %table.CodeRay
+      - examples.each do |format, example|
+        %tr{ :'data-format' => format, :style => example[:show] ? '' : 'display: none'}
+          %td.line-numbers{ :rowspan => 2 }
+            - 1.upto(example[:linecount]) do |n|
+              %p= n
+          %td.code
+            %pre= example[:code]
+      %tr
+        %td.format
+          %dl.sub-nav
+            - examples.each do |format, example|
+              %dd{ :class => example[:show] ? 'active' : '' }
+                = link_to(format, '#', :class => 'switch-format', :'data-format' => format)

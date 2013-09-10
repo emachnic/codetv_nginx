@@ -1,0 +1,42 @@
+.row
+  .large-12.columns
+    %h3 Payment
+
+.row
+  .large-8.small-12.columns
+    %h5 Credit or Debit Cards
+    %label Card Type
+    %select{ :name => "card_type" }
+      %option
+      %option{ :value => "Visa" } Visa
+      %option{ :value => "Mastercard" } Mastercard
+      %option{ :value => "American Express" } American Express
+    %label Name on Card
+    %input{ :type => "text", :name => "card_name" }
+    %label Card Number
+    %input{ :type => "text", :name => "credit_card_number" }
+    .row
+      .large-6.small-6.columns
+        %label Expiration Month
+        %select{ :name => "month" }
+          - (1..12).each do |m|
+            %option{ :value => m }
+              #{m} - #{ Date::MONTHNAMES[m] }
+      .large-6.small-6.columns
+        %label Expiration Year
+        %select{ :name => "year" }
+          - 9.times do |y|
+            - y = y + Time.now.year
+            %option{ :value => y }
+              #{y}
+.row
+  .large-8.small-12.columns
+    %br
+    %br
+    %h5 Direct Debit
+    %label Name on Account
+    %input{ :type => "text", :name => "account_name" }
+    %label Routing Number
+    %input{ :type => "text", :name => "routing_number" }
+    %label Account Number
+    %input{ :type => "text", :name => "account_number" }

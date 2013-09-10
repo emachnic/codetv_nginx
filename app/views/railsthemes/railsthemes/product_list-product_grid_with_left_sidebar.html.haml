@@ -1,0 +1,43 @@
+.row
+  .large-3.small-12.columns
+    %ul.side-nav
+      %li= link_to "All Products", "#"
+      %li.divider
+      - categories = ["New", "Stuff", "Women's Clothing", "Men's Clothing", "Children's Clothing", "Home Goods", "Electronics", "Specials"]
+      - categories.each do |category|
+        %li= link_to category, "#"
+    .promo
+      = image_tag "http://placehold.it/200x350&text=Promo", :style => "margin-bottom: 20px;"
+
+  .large-9.small-12.columns
+    .row
+      - 6.times do
+        .large-4.small-12.columns.prod-summary
+          = image_tag "http://placehold.it/500x500&text=Product+Image", :class => "prod-image"
+          .prod-description
+            %h5.prod-name Product Name
+            %p.prod-price $19.99
+    %hr.greyscale
+    .row
+      %ul.pagination
+        %li.arrow.unavailable
+          = link_to "#" do
+            &laquo;
+        %li.current
+          = link_to "1", "#"
+        %li
+          = link_to "2", "#"
+        %li
+          = link_to "3", "#"
+        %li
+          = link_to "4", "#"
+        %li
+          = link_to "#" do
+            &hellip;
+        %li
+          = link_to "12", "#"
+        %li
+          = link_to "13", "#"
+        %li.arrow
+          = link_to "#" do
+            &raquo;

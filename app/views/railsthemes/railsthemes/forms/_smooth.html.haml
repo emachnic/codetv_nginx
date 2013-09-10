@@ -1,0 +1,86 @@
+%form.smooth
+  .fields
+    .row
+      .small-12.columns
+        %h4 Shipping Address
+    .row
+      .large-6.small-6.columns
+        %label.error First Name
+        %hint First Name cannot be blank
+        %input.error{ :type => "text", :name => "first_name_shipping_address" }
+
+      .large-6.small-6.columns
+        %label Last Name
+        %input{ :type => "text", :name => "last_name_shipping_address" }
+
+    .row
+      .large-12.small-12.columns
+        %label Address
+        %input{ :type => "text", :name => "address_shipping_address" }
+
+    .row
+      .large-12.small-12.columns
+        %label Address 2
+        %note You can leave this blank unless needed
+        %input{ :type => "text", :name => "address2_shipping_address" }
+
+    .row
+      .small-4.columns
+        %label City
+        %input{ :type => "text", :name => "city_shipping_address" }
+
+      .small-2.columns
+        %label State
+        %input.smallest{ :type => "text", :name => "state_shipping_address" }
+
+      .large-4.small-6.columns
+        %label Country
+        %select
+          - ['United States', 'Australia', 'Canada', 'France', 'Germany', 'Mexico', 'New Zealand', 'United Kingdom'].each do |country|
+            %option{ :value => country } #{country}
+
+      .small-2.columns
+        %label Zip Code
+        %input{ :type => "text", :name => "zipcode_shipping_address" }
+
+    .row
+      .large-12.small-12.columns
+        %input{ :type => "checkbox" }
+        %label My billing address is different than my shipping address
+
+  .fields.disabled
+    .row
+      .large-12.columns
+        %h4.mute Billing Address
+
+    .row
+      .large-6.small-6.columns
+        %label First Name
+        %input{ :type => "text", :name => "first_name_billing_address" }
+
+      .large-6.small-6.columns
+        %label Last Name
+        %input{ :type => "text", :name => "last_name_billing_address" }
+
+    .row
+      .large-12.small-12.columns
+        %label Address
+        %input{ :type => "text", :name => "address_billing_address" }
+
+    .row
+      .large-12.small-12.columns
+        %label Address 2
+        %input{ :type => "text", :name => "address2_billing_address" }
+
+    .row
+      .large-6.small-6.columns
+        %label City
+        %input{ :type => "text", :name => "city_billing_address" }
+
+      .large-3.small-3.columns
+        %label State
+        %input.chars-2{ :type => "text", :name => "state_billing_address" }
+
+      .large-3.small-3.columns
+        %label Zip Code
+        %input.chars-5{ :type => "text", :name => "zipcode_billing_address" }

@@ -1,0 +1,598 @@
+/* This file is included as part of the Meta theme from
+ RailsThemes.com, which is licensed for use in a single website. The
+ license can be found in the doc folder of this application or at
+ railsthemes.com/terms. */
+
+@import "railsthemes_meta/colors";
+
+/* This is the default html and body font-size for the base em value. */
+$em-base: 16px;
+$global-radius: 5px;
+
+@import "foundation/components/global";
+
+/* Override Media Queries: */
+$small-screen: emCalc(500px);
+$medium-screen: emCalc(768px);
+$large-screen: emCalc(1280px);
+
+$screen: "only screen";
+$small: "only screen and (min-width:"#{$small-screen}")";
+$medium: "only screen and (min-width:"#{$medium-screen}")";
+$large: "only screen and (min-width:"#{$large-screen}")";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+@import "compass/css3";
+
+$shiny-edge-size: 0 1px 0;
+$shiny-edge-color: rgba($lightest, .5);
+$shiny-edge-active-color: rgba($darkest, .2);
+
+/* Typography Variables */
+
+$subheader-line-height: 1.2;
+$subheader-font-color: lighten($header-font-color, 30%);
+$subheader-font-weight: 300;
+$subheader-top-margin: .2em;
+$subheader-bottom-margin: 0em;
+
+$small-font-size: 75%;
+$small-font-color: lighten($body-font-color, 30%);
+
+$code-color: darken($alert-color, 15%);
+$code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
+$code-font-weight: bold;
+
+$anchor-text-decoration: none;
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: darken($primary-color, 5%);
+
+$hr-border-color: $muted-color;
+$hr-margin: emCalc(20px);
+
+$list-style-position: inside;
+
+$blockquote-font-color: $darker;
+$blockquote-padding: emCalc(9px) emCalc(20px) 0 emCalc(19px);
+$blockquote-border: none;
+$blockquote-cite-font-size: emCalc(16px);
+$blockquote-cite-font-color: $dark;
+$blockquote-cite-link-color: $primary-color;
+
+$acronym-underline: 1px dotted $mid-neutral;
+$microformat-padding: emCalc(10px) emCalc(12px);
+$microformat-margin: 0 0 emCalc(20px) 0;
+$microformat-border-width: 1px;
+$microformat-border-style: solid;
+$microformat-border-color: $mid-neutral;
+$microformat-fullname-font-weight: bold;
+$microformat-fullname-font-size: emCalc(15px);
+$microformat-summary-font-weight: bold;
+$microformat-abbr-padding: 0 emCalc(1px);
+$microformat-abbr-font-weight: bold;
+$microformat-abbr-font-decoration: none;
+
+/* Form Variables */
+
+$form-spacing: emCalc($em-base);
+$label-font-size: emCalc(14px);
+$label-font-weight: 500;
+$label-font-color: lighten($darkest, 30%);
+$label-bottom-margin: emCalc(3px);
+$input-font-family: inherit;
+$input-font-color: opacify($darkest, 0.75);
+$input-font-size: emCalc(14px);
+$input-bg-color: $lightest;
+$input-focus-bg-color: darken($lightest, 2%);
+$input-border-color: darken($lightest, 20%);
+$input-focus-border-color: darken($lightest, 40%);
+$input-border-style: solid;
+$input-border-width: 1px;
+$input-disabled-bg: $mid-neutral;
+$input-box-shadow: inset 0 1px 2px opacify($darkest, 0.1);
+$fieldset-border-style: solid;
+$fieldset-border-width: 1px;
+$fieldset-border-color: $mid-neutral;
+$fieldset-padding: emCalc(20px);
+$fieldset-margin: emCalc(18px) 0;
+
+$legend-bg: $lightest;
+$legend-font-weight: bold;
+$legend-padding: 0 emCalc(3px);
+
+$input-prefix-bg: darken($lightest, 5%);
+$input-prefix-border-color: darken($lightest, 20%);
+$input-prefix-border-size: 1px;
+$input-prefix-border-type: solid;
+$input-prefix-overflow: hidden;
+$input-prefix-font-color: $dark;
+$input-prefix-font-color-alt: $lightest;
+$input-error-message-padding: emCalc(6px) emCalc(4px);
+$input-error-message-top: -($form-spacing) - emCalc(5px);
+$input-error-message-font-size: emCalc(12px);
+$input-error-message-font-weight: bold;
+$input-error-message-font-color: $lightest;
+$input-error-message-font-color-alt: $dark;
+
+$button-display: inline-block;
+$button-margin-bottom: emCalc(20px);
+$button-font-color: $lightest;
+$button-font-color-alt: $dark;
+$button-font-med: emCalc(16px);
+$button-font-tny: emCalc(11px);
+$button-font-sml: emCalc(13px);
+$button-font-lrg: emCalc(20px);
+$button-font-weight: bold;
+$button-font-align: center;
+$button-function-factor: 10%;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: darken($primary-color, $button-function-factor);
+$button-radius: $global-radius;
+$button-disabled-opacity: 0.6;
+
+/* Dropdown Button Variables */
+
+$dropdown-button-pip-color: $lightest;
+$dropdown-button-pip-color-alt: $dark;
+
+/* Split Button Variables */
+
+$split-button-function-factor: 15%;
+$split-button-pip-color: $lightest;
+$split-button-pip-color-alt: $dark;
+$split-button-active-bg-tint: opacify($darkest, 0.1);
+
+/* Alert Variables */
+
+$alert-font-color: $lightest;
+$alert-font-color-alt: darken($secondary-color, 60%);
+$alert-function-factor: 10%;
+$alert-border-style: solid;
+$alert-border-width: 1px;
+$alert-border-color: darken($positive-accent, $alert-function-factor);
+$alert-bottom-margin: emCalc(20px);
+$alert-close-color: $dark;
+$alert-close-position: emCalc(5px);
+$alert-close-font-size: emCalc(22px);
+$alert-close-opacity: 0.3;
+$alert-close-opacity-hover: 0.5;
+$alert-close-padding: 5px 4px 4px;
+$alert-radius: $global-radius;
+
+/* Breadcrumb Variables */
+
+$crumb-bg: $body-bg;
+$crumb-padding: emCalc(6px) emCalc(14px) emCalc(9px) 0;
+$crumb-side-padding: emCalc(12px);
+$crumb-border-style: none;
+$crumb-font-size: emCalc(11px);
+$crumb-font-color: $primary-color;
+$crumb-font-color-current: $darker;
+$crumb-font-color-unavailable: $mild;
+$crumb-font-transform: uppercase;
+$crumb-link-decor: underline;
+$crumb-slash-color: $mild;
+$crumb-slash: "/";
+
+/* Clearing Variables */
+
+$clearing-bg: $darkest;
+$clearing-caption-bg: $clearing-bg;
+$clearing-carousel-bg: $darkest;
+$clearing-img-bg: $clearing-bg;
+$clearing-close-color: $lightest;
+$clearing-close-size: 40px;
+$clearing-arrow-size: 16px;
+$clearing-arrow-color: $clearing-close-color;
+$clearing-caption-font-color: $lightest;
+$clearing-caption-padding: 10px 30px;
+$clearing-active-img-height: 75%;
+$clearing-carousel-height: 150px;
+$clearing-carousel-thumb-width: 175px;
+$clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255);
+
+/* Dropdown Variables */
+
+$f-dropdown-max-width: 200px;
+$f-dropdown-height: auto;
+$f-dropdown-max-height: none;
+$f-dropdown-margin-top: 2px;
+$f-dropdown-bg: $lightest;
+$f-dropdown-border-style: solid;
+$f-dropdown-border-width: 1px;
+$f-dropdown-border-color: darken($lightest, 20%);
+$f-dropdown-triangle-size: 6px;
+$f-dropdown-triangle-color: $lightest;
+$f-dropdown-triangle-side-offset: 10px;
+$f-dropdown-list-style: none;
+$f-dropdown-font-color: $medium-dark;
+$f-dropdown-font-size: emCalc(14px);
+$f-dropdown-list-padding: emCalc(5px) emCalc(10px);
+$f-dropdown-line-height: emCalc(18px);
+$f-dropdown-list-hover-bg: $neutral;
+$dropdown-mobile-left: 0;
+$f-dropdown-content-padding: emCalc(20px);
+
+
+/* Joyride Variables */
+
+$joyride-tip-bg: $darkest;
+$joyride-tip-border: solid 1px $medium-dark;
+$joyride-tip-font-color: $lightest;
+$joyride-tip-timer-color: $medium-dark;
+$joyride-tip-close-color: $medium-color;
+$joyride-screenfill: opacify($darkest, 0.5);
+
+/* Keystroke Variables */
+
+$keystroke-font: "Consolas", "Menlo", "Courier", monospace;
+$keystroke-font-size: emCalc(15px);
+$keystroke-font-color: $darker;
+$keystroke-font-color-alt: $lightest;
+$keystroke-function-factor: 7%;
+$keystroke-padding: emCalc(2px) emCalc(4px) emCalc(0px);
+$keystroke-bg: darken($lightest, $keystroke-function-factor);
+$keystroke-border-style: solid;
+$keystroke-border-width: 1px;
+$keystroke-border-color: darken($keystroke-bg, $keystroke-function-factor);
+$keystroke-radius: $global-radius;
+
+/* Label Variables */
+
+$label-padding: emCalc(3px) emCalc(10px) emCalc(4px);
+$label-radius: $global-radius;
+$label-font-sizing: emCalc(14px);
+$label-font-weight: bold;
+
+/* Orbit Settings */
+
+$orbit-container-bg: $light-neutral;
+$orbit-caption-bg-old-browser: $darkest;
+$orbit-caption-bg-old: $darkest;
+$orbit-caption-bg: opacify($darkest, 0.6);
+$orbit-caption-font-color: $lightest;
+$orbit-nav-bg-old: $darkest;
+$orbit-nav-bg: opacify($darkest, 0.6);
+$orbit-timer-bg-old: $darkest;
+$orbit-timer-bg: opacify($darkest, 0.6);
+$orbit-bullet-nav-color: $mild;
+$orbit-bullet-nav-color-active: $darker;
+$orbit-slide-number-bg: $darkest;
+$orbit-slide-number-font-color: $lightest;
+$orbit-slide-number-padding: emCalc(5px);
+
+/* Pagination Variables */
+
+$pagination-height: emCalc(24px);
+$pagination-margin: emCalc(-5px);
+$pagination-li-float: $default-float;
+$pagination-li-height: emCalc(24px);
+$pagination-li-font-color: $darker;
+$pagination-li-font-size: emCalc(14px);
+$pagination-li-margin: emCalc(5px);
+$pagination-link-pad: emCalc(1px) emCalc(7px) emCalc(1px);
+$pagination-link-font-color: $mild;
+$pagination-link-active-bg: darken($lightest, 10%);
+$pagination-link-unavailable-cursor: default;
+$pagination-link-unavailable-font-color: $mild;
+$pagination-link-unavailable-bg-active: transparent;
+$pagination-link-current-background: $primary-color;
+$pagination-link-current-font-color: $lightest;
+$pagination-link-current-font-weight: bold;
+$pagination-link-current-cursor: default;
+$pagination-link-current-active-bg: $primary-color;
+
+/* Panel Variables */
+
+$panel-bg: darken($lightest, 5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
+$panel-function-factor: 10%;
+$panel-border-color: darken($panel-bg, $panel-function-factor);
+$panel-margin-bottom: emCalc(20px);
+$panel-padding: emCalc(20px);
+$panel-font-color: $dark;
+$panel-font-color-alt: $lightest;
+
+/* Pricing Table Variables */
+
+$price-table-border: solid 1px $mid-neutral;
+$price-table-margin-bottom: emCalc(20px);
+$price-title-bg: $mid-neutral;
+$price-title-padding: emCalc(15px) emCalc(20px);
+$price-title-align: center;
+$price-title-color: $muted-color;
+$price-title-weight: bold;
+$price-title-size: emCalc(20px);
+$price-money-bg: $light-neutral;
+$price-money-padding: emCalc(15px) emCalc(20px);
+$price-money-align: center;
+$price-money-color: $dark;
+$price-money-weight: normal;
+$price-money-size: emCalc(20px);
+$price-bg: $lightest;
+$price-desc-color: $muted-color;
+$price-desc-padding: emCalc(15px);
+$price-desc-align: center;
+$price-desc-font-size: emCalc(12px);
+$price-desc-weight: normal;
+$price-desc-line-height: 1.4;
+$price-desc-bottom-border: dotted 1px $mid-neutral;
+$price-item-color: $dark;
+$price-item-padding: emCalc(15px);
+$price-item-align: center;
+$price-item-font-size: emCalc(14px);
+$price-item-weight: normal;
+$price-item-bottom-border: dotted 1px $mid-neutral;
+$price-cta-bg: $light-neutral;
+$price-cta-align: center;
+$price-cta-padding: emCalc(20px) emCalc(20px) 0;
+
+/* Progress Bar Variables */
+
+$progress-bar-height: emCalc(25px);
+$progress-bar-color: transparent;
+$progress-bar-border-color: darken($lightest, 20%);
+$progress-bar-border-size: 1px;
+$progress-bar-border-style: solid;
+$progress-bar-border-radius: $global-radius;
+$progress-bar-pad: emCalc(2px);
+$progress-bar-margin-bottom: emCalc(10px);
+$progress-meter-color: $primary-color;
+$progress-meter-secondary-color: $secondary-color;
+$progress-meter-success-color: $success-color;
+$progress-meter-alert-color: $alert-color;
+
+
+/* Reveal Variables */
+
+$reveal-overlay-bg: rgba($darkest, .45);
+$reveal-overlay-bg-old: $darkest;
+$reveal-modal-bg: $lightest;
+$reveal-position-top: 50px;
+$reveal-default-width: 80%;
+$reveal-modal-padding: emCalc(20px);
+$reveal-box-shadow: 0 0 10px rgba($darkest,.4);
+$reveal-close-font-size: emCalc(22px);
+$reveal-close-top: emCalc(8px);
+$reveal-close-side: emCalc(11px);
+$reveal-close-color: $mild;
+$reveal-close-weight: bold;
+$reveal-border-style: solid;
+$reveal-border-width: 1px;
+$reveal-border-color: $medium-dark;
+
+/* Section Variables */
+
+$section-padding: emCalc(15px);
+$section-function-factor: 10%;
+$section-title-color: $dark;
+$section-title-bg: $neutral;
+$section-title-bg-active: darken($section-title-bg, $section-function-factor);
+$section-title-bg-active-tabs: $lightest;
+$section-border-size: 1px;
+$section-border-style: solid;
+$section-border-color: $mid-neutral;
+$section-content-bg: $lightest;
+$section-vertical-nav-min-width: emCalc(200px);
+$section-bottom-margin: emCalc(20px);
+
+/* Side Nav Variables */
+
+$side-nav-padding: emCalc(14px) 0;
+$side-nav-list-type: none;
+$side-nav-list-position: inside;
+$side-nav-list-margin: 0 0 emCalc(7px) 0;
+$side-nav-link-color: $primary-color;
+$side-nav-link-color-active: lighten($darkest, 30%);
+$side-nav-font-size: emCalc(14px);
+$side-nav-font-weight: bold;
+$side-nav-divider-size: 1px;
+$side-nav-divider-style: solid;
+$side-nav-divider-color: darken($lightest, 10%);
+
+/* Sub Nav Variables */
+
+$sub-nav-list-margin: emCalc(-4px) 0 emCalc(18px);
+$sub-nav-list-padding-top: emCalc(4px);
+$sub-nav-font-size: emCalc(14px);
+$sub-nav-font-color: $mild;
+$sub-nav-font-weight: normal;
+$sub-nav-text-decoration: none;
+$sub-nav-border-radius: 1000px;
+$sub-nav-active-font-weight: bold;
+$sub-nav-active-bg: $primary-color;
+$sub-nav-active-color: $lightest;
+$sub-nav-active-padding: emCalc(3px) emCalc(9px);
+$sub-nav-active-cursor: default;
+
+/* Switch Variables */
+
+$switch-border-color: darken($lightest, 20%);
+$switch-border-style: solid;
+$switch-border-width: 1px;
+$switch-bg: $lightest;
+$switch-paddle-bg: $lightest;
+$switch-paddle-fade-to-color: darken($switch-paddle-bg, 10%);
+$switch-paddle-border-color: darken($switch-paddle-bg, 35%);
+$switch-paddle-border-width: 1px;
+$switch-paddle-border-style: solid;
+$switch-positive-color: lighten($success-color, 50%);
+$switch-negative-color: $light-neutral;
+$switch-label-outline: 1px dotted $medium-color;
+
+/* Table Variables */
+
+$table-bg: $lightest;
+$table-even-row-bg: transparentize($light-neutral, 0.5);
+$table-border-style: solid;
+$table-border-size: 1px;
+$table-border-color: $light-neutral;
+$table-head-bg: mix($lightest, $light-neutral);
+$table-head-font-size: emCalc(14px);
+$table-head-font-color: $darker;
+$table-head-font-weight: bold;
+$table-head-padding: emCalc(8px) emCalc(10px) emCalc(10px);
+$table-row-padding: emCalc(9px) emCalc(10px);
+$table-row-font-size: emCalc(14px);
+$table-row-font-color: $darker;
+$table-line-height: emCalc(18px);
+$table-display: table-cell;
+$table-margin-bottom: emCalc(20px);
+
+/* Image Thumbnail Variables */
+
+$thumb-border-style: solid;
+$thumb-border-width: 4px;
+$thumb-border-color: $lightest;
+$thumb-box-shadow: 0 0 0 1px rgba($darkest,.2);
+$thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+$thumb-radius: $global-radius;
+
+/* Tooltip Variables */
+
+$has-tip-border-bottom: dotted 1px $mid-neutral;
+$has-tip-font-weight: bold;
+$has-tip-font-color: $dark;
+$has-tip-border-bottom-hover: dotted 1px darken($primary-color, 20%);
+$has-tip-font-color-hover: $primary-color;
+$has-tip-cursor-type: help;
+
+$tooltip-padding: emCalc(8px);
+$tooltip-bg: $darkest;
+$tooltip-font-size: emCalc(15px);
+$tooltip-font-weight: bold;
+$tooltip-font-color: $lightest;
+$tooltip-line-height: 1.3;
+$tooltip-close-font-size: emCalc(10px);
+$tooltip-close-font-weight: normal;
+$tooltip-close-font-color: $medium-color;
+$tooltip-font-size-sml: emCalc(14px);
+$tooltip-radius: $global-radius;
+$tooltip-pip-size: 5px;
+
+/* Top Bar Variables */
+
+$topbar-bg: $main-nav-background;
+$topbar-height: 45px;
+$topbar-margin-bottom: emCalc(0px);
+$topbar-title-weight: normal;
+$topbar-link-color: $main-nav-text;
+$topbar-link-weight: normal;
+$topbar-link-font-size: emCalc(16px);
+$topbar-dropdown-bg: $main-nav-background;
+$topbar-dropdown-link-color: $main-nav-text;
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: $main-nav-text;
+$topbar-dropdown-toggle-alpha: 0.5;
+$dropdown-label-color: $positive-accent;
+$topbar-menu-link-font-size: emCalc(16px);
+$topbar-menu-link-weight: normal;
+$topbar-menu-link-color: $main-nav-text;
+$topbar-menu-icon-color: $main-nav-text;
+$topbar-menu-link-color-toggled: $main-nav-text;
+$topbar-menu-icon-color-toggled: $main-nav-text;
+$topbar-breakpoint: emCalc(500px);
+
+@import 'foundation';
+
+/** I think it's just silly to have to put class "button" on button and submit tags. -EB **/
+input[type=submit], button {
+  @include button;
+}
+
+p {
+  a {
+    text-decoration: underline;
+  }
+}
+
+.alert-box {
+  @include radius($alert-radius);
+}
+
+.alert-box.notice {
+  @include alert-style( $success-color );
+}
+
+.clearing-thumbs {
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.th {
+  margin: 5px (2*$thumb-border-width);
+}
+
+blockquote cite {
+  font-style: normal;
+  &:before {
+    content: "";
+  }
+  span.title {
+    text-transform: uppercase;
+    color: $blockquote-cite-font-color;
+  }
+}
+
+a.th span {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  line-height: 140%;
+}
+
+.panel {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $header-bottom-margin;
+    &.subheader {
+      line-height: $subheader-line-height;
+    }
+  }
+}
+
+.button, input[type=submit], button {
+  background-color: $primary-color;
+  @include border-radius($button-radius/2);
+  @include box-shadow(inset 0 1px 1px transparentize($neutral, 0.5));
+  @include background-image(linear-gradient(bottom, $muted-color, $primary-color));
+  &:hover, &:focus {
+    @include background-image(linear-gradient(bottom, $muted-color, lighten($primary-color, 10%)));
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    border: 1px solid $darkest;
+    color: $lightest;
+    @include box-shadow(0 2px $darkest, inset 0 1px 1px $mild);
+    @include background-image( linear-gradient(top, $medium-color, $darker) );
+    @include text-shadow(0 -1px 1px opacify($darkest, 0.55));
+
+    &:hover, &:focus {
+    @include background-image( linear-gradient(top, darken($medium-color, 10%), $darkest ) );
+    }
+  }
+  &.small {
+    padding: 6px 25px;
+    font-weight: normal;
+  }
+  &.prefix, &.postfix {
+    @include border-radius(0);
+  }
+}
+
+.container.foundation-general-icons ul {
+  margin: 0;
+}
+
+.container.foundation-social-icons ul {
+  margin: 0;
+}
+
+.feature-description {
+  font-size: 75%;
+}

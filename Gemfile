@@ -35,3 +35,6 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+gem 'jquery-ui-rails' # RailsThemes
+gem 'compass-rails', '~> 2.0.alpha.0' # RailsThemes
+gem 'zurb-foundation', '~> 4.0' # RailsThemes

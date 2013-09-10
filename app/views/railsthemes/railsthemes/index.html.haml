@@ -1,0 +1,29 @@
+.row
+  .small-12.columns
+    %h2 Previews
+    .panel
+      %ul.examples
+        %li= link_to 'Components', '/railsthemes/components'
+        %li= link_to 'Forms', '/railsthemes/forms'
+        %li= link_to 'E-Commerce', '/railsthemes/ecommerce'
+
+.row
+  .large-12.small-12.columns
+    %h2 Sample Pages
+
+.row#sample_index
+  - grouped_wireframes.each_pair do |group, wireframes|
+    .large-4.small-12.columns
+      .panel
+        %h4.title #{group.titleize} Pages
+        %ul.examples
+          - wireframes.sort.each do |wireframe|
+            %li= link_to make_title(wireframe), "/railsthemes/#{wireframe}"
+
+  .large-4.small-12.columns
+    .panel
+      %h4.title Application Error Pages
+      %ul.examples
+        - error_views.each do |file|
+          - wireframe = File.basename(file).gsub(/\.html\..*$/, '')
+          %li= link_to wireframe.titleize, wireframe.gsub(/_\w+/, "")

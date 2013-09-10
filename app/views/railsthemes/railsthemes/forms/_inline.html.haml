@@ -1,0 +1,41 @@
+%form.inline
+  .fields
+    .row
+      .small-12.columns
+        %label.error First Name
+        %input.error{ :type => "text", :name => "first_name_shipping_address" }
+    .row
+      .small-12.columns
+        %label Last Name
+        %input{ :type => "text", :name => "last_name_shipping_address" }
+
+    .row
+      .small-12.columns
+        %label Address
+        %input{ :type => "text", :name => "address_shipping_address" }
+
+    .row
+      .small-12.columns
+        %label Address 2
+        %input{ :type => "text", :name => "address2_shipping_address" }
+
+    .row
+      .small-12.columns
+        %label City
+        %input{ :type => "text", :name => "city_shipping_address" }
+
+    .row
+      .small-12.columns
+        %label State
+        %input.smallest{ :type => "text", :name => "state_shipping_address" }
+
+    .row
+      .small-12.columns
+        %label Country
+        %select
+          - ['United States','Australia','Canada','France','Germany','Mexico','New Zealand','United Kingdom'].each do |country|
+            %option{ :value => country } #{country}
+    .row
+      .small-12.columns
+        %label Zip Code
+        %input{ :type => "text", :name => "zipcode_shipping_address" }

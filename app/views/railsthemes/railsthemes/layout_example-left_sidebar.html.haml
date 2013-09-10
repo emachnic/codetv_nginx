@@ -1,0 +1,8 @@
+= content_for :sidebar_left do
+  %h1.page-title Page Name
+  %ul.side-nav
+    %li.active= link_to "Sub Page One", :root
+    %li= link_to "Sub Page Two", :root
+    %li= link_to "Sub Page Three", :root
+
+= render 'layout_text'

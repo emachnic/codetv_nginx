@@ -1,0 +1,63 @@
+= render :partial => 'railsthemes/shared/head'
+
+%h1 Components
+
+%p
+  We've taken some great tools provided by
+  %strong Foundation
+  and added our homecooked styling to make them a touch prettier
+  and more responsive to you and your users.
+
+%h3
+  Navigation
+  %em Side, sub, top &amp; more
+%hr
+
+%h4 Side Nav
+.row
+  .small-6.columns
+    %example
+      = render :partial => 'railsthemes/railsthemes/components/side_nav'
+  .small-6.columns
+    = source_code('components/side_nav')
+
+%h4 Sub Nav
+.row
+  .small-6.columns
+    %example
+      = render :partial => 'railsthemes/railsthemes/components/sub_nav'
+  .small-6.columns
+    = source_code('components/sub_nav')
+
+%h4 Breadcrumbs
+.row
+  .small-6.columns
+    %example
+      = render :partial => 'railsthemes/railsthemes/components/breadcrumbs'
+  .small-6.columns
+    = source_code('components/breadcrumbs')
+
+%h4 Top Bar
+.row
+  .small-12.columns
+    = render 'railsthemes/railsthemes/components/top_bar'
+.row
+  .small-4.columns
+    %h6
+      The Foundation Top Bar gives you a great way to display
+      a complex navigation bar on small or large screens.
+    %p
+      The top bar is a pretty complex piece of magical UI goodness,
+      which makes it really difficult to create a mixin from it.
+      We rely on many presentational classes to accomplish
+      the styles and there's a lot happening in the JS.
+  .small-8.columns
+    = source_code('components/top_bar')
+
+%h4 Pagination
+.row
+  .small-4.columns
+    %example
+      = render :partial => 'railsthemes/railsthemes/components/pagination'
+  .small-8.columns
+    = source_code('components/pagination')

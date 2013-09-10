@@ -1,0 +1,708 @@
+/* This file is included as part of the Meta theme from
+ RailsThemes.com, which is licensed for use in a single website. The
+ license can be found in the doc folder of this application or at
+ railsthemes.com/terms. */
+
+@import "compass/css3";
+@import "railsthemes_meta/colors";
+@import "railsthemes_meta/foundation_setup";
+@import "railsthemes/foundation_icons/foundation_social_icons";
+@import "railsthemes/foundation_icons/foundation_general_icons";
+@import "railsthemes/media_queries";
+@import "gem_support";
+
+/** Foundation Overrides for Meta: **/
+
+/** Meta Layout **/
+html {
+  background: $body-bg;
+}
+
+#header {
+  border-top: solid 2px $muted-color;
+  border-bottom: solid 2px $muted-color;
+  margin-bottom: 20px;
+  .contain-to-grid {
+    background: $main-nav-background;
+    padding-top: $main-nav-padding;
+    padding-bottom: $main-nav-padding;
+  }
+  .logo {
+    font-family: 'Rokkitt', $header-font-family;
+    font-size: 32px;
+    color: $lightest;
+    margin-bottom: 0;
+    max-width: 100%;
+    @include text-shadow(0 1px 1px rgba(0,0,0,.75));
+  }
+}
+
+#header, #footer {
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.25));
+  @include text-shadow(0 1px 1px rgba(0,0,0,.75));
+  * {
+    color: $lightest;
+  }
+  ul.main {
+    text-transform: uppercase;
+    li a:hover {
+      background-color: $muted-color;
+    }
+  }
+  ul.button-group {
+    margin: 0;
+    * {
+      color: $main-nav-text;
+    }
+    &.top {
+      line-height: 44px;
+      a {
+        font-weight: 300;
+      }
+    }
+    background: transparent;
+    .button {
+      border: none;
+      margin-bottom: 0;
+      @include box-shadow(none);
+      @include border-radius(0);
+      font-weight: bold;
+      @include background-image( none );
+    }
+  }
+}
+
+#footer {
+  margin-top: 50px;
+  background: $main-nav-background;
+  padding-bottom: $main-nav-padding;
+  padding-top: $main-nav-padding;
+  color: $neutral;
+  ul.main {
+    li {
+      margin: 0;
+      a {
+        @include button;
+        border: none;
+        margin-bottom: 0;
+        @include box-shadow(none);
+        @include border-radius(0);
+        font-weight: normal;
+        @include background-image( none );
+      }
+    }
+  }
+  .row {
+    .columns {
+      min-height: 225px;
+      & > * {
+        margin-top: 0;
+      }
+      & > hr {
+        margin: 1.5em 0 1.5em 0;
+      }
+    }
+    .columns {
+      padding-right: 60px;
+    }
+    .columns + .columns {
+      border-left: 1px solid $muted-color;
+      padding-left: 60px;
+      padding-right: 0;
+    }
+  }
+}
+
+/* sticky footer from: https://gist.github.com/TechnologyArchitectureLLC/5123485 */
+body {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -305px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+  height: 305px; /* .push must be the same height as .footer */
+}
+
+/** Landing Pages **/
+
+/** Theme-wide Styling of Individual Elements **/
+
+h1 {
+  &.title { margin-top: 0; }
+}
+
+h3 {
+  color: $mild;
+}
+
+h2, h5 {
+  color: $primary-color;
+}
+
+h4, h5 {
+  font-family: 'Rokkitt', "museo-slab",serif;
+}
+
+.centered {
+  text-align: center;
+}
+
+.majorheading {
+  border-bottom: 1px solid $neutral;
+  padding-bottom: 0.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.row.roomy {
+  margin-bottom: 1em;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+ul.plain {
+  list-style-type: none;
+}
+
+hr.greyscale {
+  border-color: $mid-neutral;
+}
+
+/* Errors */
+
+.ui-widget {
+  .ui-state-highlight, .ui-state-error {
+    & > p {
+      margin: 7px;
+    }
+  }
+}
+
+/* Theme-specific deliciousness: */
+#sample_index {
+  .columns:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+$feature_margin: 4em;
+#alternating_features .feature_set {
+  .row.feature {
+    margin-bottom: $feature_margin;
+  }
+  & > .row.feature:nth-child(2n) {
+    .explanation {
+      padding-right: $feature_margin / 2;
+    }
+    .example {
+      padding-left: $feature_margin / 2;
+    }
+  }
+  & > .row.feature:nth-child(2n+1) {
+    .example {
+      float: left;
+      padding-right: $feature_margin / 2;
+    }
+    .explanation {
+      padding-left: $feature_margin / 2;
+      float: right;
+    }
+  }
+}
+
+.row.wide_products > .columns {
+  &:first-child{
+    padding-right: 2em;
+  }
+  &:last-child{
+    padding-left: 2em;
+  }
+}
+.panel.product {
+  min-height: 220px;
+  @include box-shadow(0 0 4px rgba(0,0,0,.35));
+  @include border-radius($global-radius);
+  background-color: $light-neutral;
+  margin-bottom: 4em;
+  h1, h2, h3, h4, h5, h6, button, .button, input[type=submit] {
+    margin-bottom: 0;
+    margin-top: $em-base;
+  }
+}
+
+img.pop-out.left {
+  margin: -9px 10px 10px -30px;
+}
+
+
+/** Pricing Tables **/
+
+$pricing-grid-featured-background: $light-neutral;
+$pricing-grid-prices-text: $primary-color;
+$pricing-grid-check-color: $muted-color;
+$pricing-grid-border: $darkest;
+$headers-height: emCalc(45px);
+$features-height: emCalc(35px);
+
+@mixin feature( $highlighted-column, $pricing-grid-featured-border ){
+  thead {
+    tr:first-of-type {
+      th {
+        &:nth-of-type(#{$highlighted-column}) h3 {
+          line-height: $headers-height;
+          @include background-image(linear-gradient($primary-color, $muted-color));
+          @include border-corner-radius(top, left, 5px);
+          @include border-corner-radius(top, right, 5px);
+        }
+      }
+    }
+  }
+  tfoot tr {
+    th, td {
+      div {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+  tfoot tr th:nth-of-type(#{$highlighted-column}) {
+    padding: 0;
+  }
+  tbody tr:nth-of-type(odd) > *:nth-of-type(#{$featured-pricing-level}),
+  tfoot tr th:nth-of-type(#{$highlighted-column}) div {
+    background: $pricing-grid-featured-background;
+    border-left: solid 1px $pricing-grid-featured-border;
+    border-right: solid 1px $pricing-grid-featured-border;
+  }
+  tfoot tr th:nth-of-type(#{$highlighted-column}) div {
+    border-bottom: solid 1px $pricing-grid-featured-border;
+    @include border-corner-radius(bottom, left, 3px);
+    @include border-corner-radius(bottom, right, 3px);
+  }
+}
+
+
+table.pricing {
+  @include feature($featured-pricing-level, opacify($pricing-grid-border, 0.5));
+  background-color: transparent;
+  border: none;
+  border-collapse: collapse;
+  td, th {
+    text-align: center;
+    padding: 0;
+    border: none;
+    font-size: emCalc(18px);
+    line-height: emCalc(30px);
+    font-weight: normal;
+    color: $body-font-color;
+  }
+  thead {
+    background-color: transparent;
+    tr:first-of-type {
+      th {
+        vertical-align: bottom;
+        h3 {
+          border: none;
+          font-size: emCalc(20px);
+          font-family: $sans-serif-font-family;
+          font-weight: normal;
+          line-height: $features-height;
+          font-weight: 500;
+          background-color: $primary-color;
+          @include background-image(linear-gradient($dark, $darkest));
+          color: $body-bg;
+          min-width: 120px;
+          margin: 0;
+          padding: 0 0.75em;
+        }
+        /* First Column */
+        &:nth-of-type(1) h3 {
+          @include border-corner-radius(top, left, 5px);
+        }
+        /* Last Column/Pricing Tier */
+        &:last-of-type h3 {
+          @include border-corner-radius(top, right, 5px);
+        }
+      }
+    }
+  }
+  tbody th, tbody td {
+    padding: 0.75em;
+    text-align: center;
+  }
+  tfoot button, tfoot .button {
+    margin: 0.75em;
+  }
+  tbody {
+    tr {
+      &:nth-of-type(even) { background: $neutral; }
+      td { color: $pricing-grid-check-color; }
+    }
+  }
+  tfoot {
+    background-color: transparent;
+    th {
+      color: $pricing-grid-prices-text;
+      font-size: $headers-height * .5;
+      line-height: $headers-height;
+      &:first-of-type { font-size: $headers-height * .4; }
+    }
+  }
+}
+
+table.pricing.with_features_column {
+  @include feature($featured-pricing-level+1, $mid-neutral);
+  thead {
+    tr:first-of-type {
+      th {
+        h3 {
+          line-height: $headers-height;
+          @include border-radius(0);
+        }
+        &:nth-of-type(#{$featured-pricing-level+1}) h3 {
+          @include border-radius(0);
+        }
+        &:nth-of-type(even) h3 {
+          @include background-image(linear-gradient($primary-color, $muted-color));
+        }
+        &:nth-of-type(odd) h3 {
+          @include background-image(linear-gradient($primary-color, mix($primary-color, $muted-color)));
+        }
+        /* Features Column */
+        &:first-child h3{
+          font-size: emCalc(20px);
+          line-height: $features-height;
+          font-family: $header-font-family;
+          font-weight: 500;
+          @include background-image(linear-gradient($dark, $darkest));
+          @include border-corner-radius(top, left, 5px);
+        }
+        /* First Actual Price Tier */
+        &:nth-of-type(2) {
+          h3 {
+            @include border-corner-radius(top, left, 5px);
+          }
+        }
+        /* Last Price Tier */
+        &:last-of-type h3 {
+          @include border-corner-radius(top, right, 5px);
+        }
+      }
+    }
+  }
+  tbody {
+    border: none;
+    tr {
+      th:first-child {
+        padding: 0.25em 0.75em;
+        line-height: $features-height;
+        text-align: left;
+        border-right: 1px solid $pricing-grid-border;
+      }
+    }
+  }
+  tfoot {
+    background-color: transparent;
+    border-top: 1px solid $pricing-grid-border;
+  }
+}
+
+/** Mobile Class hidden by default **/
+.mobile { display: none; }
+
+/** Styling for Mobile version of the table **/
+.with_features_column {
+  div { padding-left: 0em !important; padding-right: 0em !important; }
+  @include feature($featured-pricing-level, opacify($pricing-grid-border, 0.5));
+  @include feature($featured-pricing-level+1, $mid-neutral);
+  .pricing-table {
+    background-color: transparent;
+    border: none;
+    border-collapse: collapse;
+    li:nth-of-type(odd) { background: $neutral; }
+  }
+  li {
+    text-align: center;
+    padding: 0;
+    border: none;
+    line-height: emCalc(30px);
+    font-weight: normal;
+    color: $body-font-color;
+  }
+  li.title {
+    background-color: transparent;
+    vertical-align: bottom;
+    border: none;
+    font-size: emCalc(22px) !important;
+    font-family: $sans-serif-font-family;
+    font-weight: normal;
+    line-height: $headers-height;
+    font-weight: 500;
+    background-color: $primary-color;
+    @include border-radius(0);
+    color: $lightest;
+    min-width: 120px;
+    margin: 0;
+    padding: 0.25em 0.75em;
+    text-align: center;
+    border-right: 1px solid $pricing-grid-border;
+  }
+  /* Features Column */
+  .headers {
+    li {
+      line-height: emCalc(42px); border: none;
+    }
+    li.title {
+      line-height: emCalc(32px);
+      margin-top: emCalc(12px);
+      padding: 0 0.25em;
+      vertical-align: bottom;
+      font-size: emCalc(20px);
+      font-family: $header-font-family;
+      font-weight: 500;
+      @include background-image(linear-gradient($dark, $darkest));
+      @include border-corner-radius(top, left, 5px);
+    }
+    li.description {
+      color: $body-font-color;
+      font-size: emCalc(18px);
+      padding: 0.25em 0.75em;
+      text-align: left;
+      border-right: 1px solid $pricing-grid-border;
+    }
+    li.price.description {
+      border-right: none;
+      padding-top: 0.5em;
+      font-size: $headers-height * .4 !important;
+    }
+  }
+  .tiers {
+    li.title {
+      padding: 0 0.75em;
+      &:nth-of-type(#{$featured-pricing-level+1}) {
+        line-height: $headers-height;
+        @include border-radius(0);
+      }
+      @include background-image(linear-gradient($primary-color, $muted-color));
+    }
+    /* First Actual Price Tier */
+    &#base {
+      li.title {
+        border-right: none;
+        @include border-corner-radius(top, left, 5px);
+      }
+    }
+    /* Last Price Tier */
+    &#plus {
+      li.title {
+        border-right: none;
+        @include border-corner-radius(top, right, 5px);
+      }
+      li { border-left: none; }
+    }
+    &#mid {
+      li.title {
+        border-left: none;
+        border-right: none;
+        @include background-image(linear-gradient($primary-color, mix($primary-color, $muted-color)));
+      }
+    }
+    li.bullet-item {
+      border: none;
+      padding: 0.75em;
+      text-align: center;
+      font-size: emCalc(18px);
+      line-height: emCalc(26px);
+      color: $pricing-grid-check-color;
+    }
+    li.price {
+      font-size: $headers-height * .5 !important;
+      line-height: $headers-height;
+      padding: 0;
+    }
+  }
+  li.price, li.price.description {
+    background-color: transparent;
+    color: $pricing-grid-prices-text;
+    border-top: 1px solid $pricing-grid-border !important;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+}
+
+/** Smartphone Screens **/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /** By default fullscreen off & mobile on **/
+  .fullscreen { display: none; }
+
+  .mobile {
+    display: inherit;
+  }
+
+  ul {
+    background: none;
+    margin-bottom: emCalc(30px);
+    &.header li.title { display: none; }
+  }
+
+  li {
+    list-style-type: none;
+    display: inherit;
+    &.title {
+      color: $muted-color;
+      font-size: 120%;
+    }
+    &.price { font-size: 99%; }
+  }
+
+  /** Specific table design changes **/
+
+  ul.body {
+    li:nth-of-type(even), li.price {
+      background: none !important;
+      border-left: solid 1px $mid-neutral !important;
+      border-right: solid 1px $mid-neutral !important;
+    }
+    li.price {
+      padding: 0;
+      line-height: emCalc(40px);
+      border-bottom: solid 1px $mid-neutral !important;
+      @include border-corner-radius(bottom, left, 3px);
+      @include border-corner-radius(bottom, right, 3px);
+    }
+    li.title {
+      border: none;
+      background-color: $primary-color;
+      @include border-corner-radius(top, right, 5px);
+      @include border-corner-radius(top, left, 5px);
+    }
+    li.bullet-item {
+      line-height: emCalc(40px);
+      color: $pricing-grid-check-color;
+      &:nth-of-type(odd) { background: $neutral; }
+      &:nth-of-type(2):before { content: "Feature 1 "; color: $body-font-color; }
+      &:nth-of-type(3):before { content: "Feature 2 "; color: $body-font-color; }
+      &:nth-of-type(4):before { content: "Feature 3 "; color: $body-font-color; }
+      &:nth-of-type(5):before { content: "Feature 4 "; color: $body-font-color; }
+    }
+    &#standard {
+      li.bullet-item {
+        &:nth-of-type(4) { display: none; }
+        &:nth-of-type(5) { display: none; }
+      }
+    }
+    &#premium {
+      li.bullet-item:nth-of-type(5) { display: none; }
+    }
+    &#standard, &#pro {
+      li.title { @include background-image(linear-gradient($primary-color, $muted-color)); }
+    }
+  }
+  li.footer {
+    font-size: 110%;
+    font-weight: bold;
+    color: $primary-color;
+    display: inherit;
+    background: $light-neutral;
+    border-top: 1px solid $dark !important;
+  }
+
+  .mobile {
+    &:nth-of-type(2) .pricing-table {
+      li.title { @include background-image(linear-gradient($primary-color, $muted-color)); }
+    }
+    .pricing-table {
+      background-color: transparent;
+      border: none;
+      li {
+        background-color: transparent;
+        border-left: solid 1px $mid-neutral !important;
+        border-right: solid 1px $mid-neutral !important;
+        &.price { background-color: white; }
+      }
+      li.title {
+        border: none !important;
+        @include background-image(linear-gradient($dark, $darkest));
+        color: $body-bg;
+        @include border-corner-radius(top, left, 5px);
+        @include border-corner-radius(top, right, 5px);
+      }
+      li.bullet-item {
+        color: $pricing-grid-check-color;
+        &:nth-of-type(odd) { background: $neutral; }
+      }
+      li.cta-button {
+        border-bottom: solid 1px $mid-neutral;
+        @include border-corner-radius(bottom, left, 5px);
+        @include border-corner-radius(bottom, right, 5px);
+      }
+    }
+  }
+}
+
+/** Larger smartphone screens in landscape **/
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation : landscape) {
+  .with_features_column.mobile {
+    .large-3 { width: 100%; }
+  }
+  .large-4.mobile {
+    width: 100%;
+  }
+}
+
+/** Color Samples **/
+$names: primary-color, bright-color, muted-color, positive-accent, negative-accent, lightest, neutral, mild, medium-color, dark, darkest, light-neutral, mid-neutral, medium-dark, darker;
+$colors: $primary-color, $bright-color, $muted-color, $positive-accent, $negative-accent, $lightest, $neutral, $mild, $medium-color, $dark, $darkest, $light-neutral, $mid-neutral, $medium-dark, $darker;
+
+@for $i from 0 to length($names) {
+  $color: nth($colors, $i+1);
+  $name: nth($names, $i+1);
+  .fill_#{$name} {
+    background-color: $color;
+  }
+}
+
+/** Simple Form **/
+
+p.label {
+  float: left;
+  width: 75px;
+  text-align: right;
+  margin: 2px 10px 0px 0px;
+}
+
+.control-label {
+  display: block;
+}
+
+/** Common Tweaks **/
+
+// used for some panels
+.background-lightest {
+  background-color: $lightest;
+}
+
+.image-margin-bottom {
+  margin-bottom: 15px;
+}
+
+.caption-margin-left {
+  margin-left: 5px;
+}

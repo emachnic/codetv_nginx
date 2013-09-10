@@ -1,0 +1,79 @@
+.row
+  .small-12.columns
+    %h1 Jamwood Flooring
+.row
+  .small-12.large-4.medium-12.columns
+    %ul.small-block-grid-2.large-block-grid-2.section-links
+      %li
+        .panel.active{ :'data-section' => 1 }
+          = link_to "#", title: 'Reporting', icon: 'file', class: 'action-button' do
+            %symbol.file
+            %span Reporting
+      %li
+        .panel{ :'data-section' => 2 }
+          = link_to "#", title: 'Users', icon: 'user', class: 'action-button' do
+            %symbol.user
+            %span Users
+      %li
+        .panel{ :'data-section' => 3 }
+          = link_to "#", title: 'Messages', icon: 'comment', class: 'action-button' do
+            %symbol.comment
+            %span Messages
+      %li
+        .panel{ :'data-section' => 4 }
+          = link_to "#", title: 'Files', icon: 'folder', class: 'action-button' do
+            %symbol.folder
+            %span Files
+      %li
+        .panel{ :'data-section' => 5 }
+          = link_to "#", title: 'Friends', icon: 'facebook', class: 'action-button' do
+            %symbol.foundicon-social-facebook
+            %span Friends
+      %li
+        .panel{ :'data-section' => 6 }
+          = link_to "#", title: 'Followers', icon: 'twitter', class: 'action-button' do
+            %symbol.foundicon-social-twitter
+            %span Followers
+
+  - 1.upto(6) do |section_number|
+    .small-12.large-8.medium-12.columns.graph-content{ :'data-content' => section_number, class: section_number == 1? 'active' : ''}
+      .box-header
+        %ul.left
+          %li
+            %h5= "Chart #{section_number}"
+
+      .box-content
+
+        -# Remove and replace with your own data
+        - line_chart_preview = [['Month', 'Traffic', 'Unique'],
+                                [2,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [3,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [4,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [5,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [6,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [7,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [8,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [9,  Random.new.rand(500..1000), Random.new.rand(500..1000) ],
+                                [10, Random.new.rand(500..1000), Random.new.rand(500..1000) ]]
+
+        .line_chart{ :'data-chart' => line_chart_preview }
+
+- 1.upto(6) do |section_number|
+  .row.graph-content{ :'data-content' => section_number, class: section_number == 1? 'active' : ''}
+    .small-12.columns
+      .box-header
+        %ul.left
+          %li
+            %h5= "Region Chart #{section_number}"
+      .box-content
+
+        -# Remove and replace with your own data
+        - geo_chart_preview = [['Country', 'Popularity'],
+                              ['Germany', Random.new.rand(500..1000)],
+                              ['United States', Random.new.rand(500..1000)],
+                              ['Brazil', Random.new.rand(500..1000)],
+                              ['Canada', Random.new.rand(500..1000)],
+                              ['France', Random.new.rand(500..1000)],
+                              ['RU', Random.new.rand(500..1000)]]
+
+        .geo_chart{ :'data-chart' => geo_chart_preview }

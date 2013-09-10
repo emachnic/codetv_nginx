@@ -1,0 +1,20 @@
+.row.roomy
+  .large-6.small-12.columns
+    = image_tag "http://placehold.it/500x545&text=Image"
+  .large-6.small-12.columns.mobile-margin-top
+    .panel
+      %h1 Header
+      %p= lorem(26)
+    .row
+      - 2.times do
+        .large-6.small-6.columns
+          .panel
+            %h2.subheader Option
+            %p= lorem(7)
+            = link_to "Button", "#", class: "full-width button"
+.row
+  - 4.times do
+    .large-3.small-6.mobile-two.columns
+      = image_tag "http://placehold.it/500x500&text=Thumbnail"
+      .panel
+        %p Description

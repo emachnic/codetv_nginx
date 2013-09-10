@@ -1,0 +1,68 @@
+.fields
+  .row
+    .large-12.columns
+      %h3 Shipping Address
+    .large-6.small-12.columns
+      %label First Name
+      %input( type="text" name="first_name_shipping_address" )
+
+    .large-6.small-12.columns
+      %label Last Name
+      %input( type="text" name="last_name_shipping_address" )
+
+  .row
+    .large-12.small-12.columns
+      %label Address
+      %input( type="text" name="address_shipping_address" )
+
+  .row
+    .large-12.small-12.columns
+      %label Address 2
+      %note Can leave blank unless needed
+      %input( type="text" name="address2_shipping_address" )
+
+    .large-6.small-12.columns
+      %label City
+      %input( type="text" name="city_shipping_address" )
+
+    .large-3.small-6.columns
+      %label State
+      %input.smallest( type="text" name="state_shipping_address" )
+
+    .large-3.small-6.columns
+      %label Zip Code
+      %input( type="text" name="zipcode_shipping_address" )
+
+  .row
+    .large-12.small-12.columns
+      %input.billing_address_toggle( type="checkbox" )
+      %label
+        Same as shipping address?
+    .billing_address
+      .large-6.small-12.columns
+        %label First Name
+        %input( type="text" name="first_name_billing_address" )
+
+      .large-6.small-12.columns
+        %label Last Name
+        %input( type="text" name="last_name_billing_address" )
+
+      .large-12.small-12.columns
+        %label Address
+        %input( type="text" name="address_billing_address" )
+
+      .large-12.small-12.columns
+        %label Address 2
+        %input( type="text" name="address2_billing_address" )
+
+      .large-6.small-12.columns
+        %label City
+        %input( type="text" name="city_billing_address" )
+
+      .large-3.small-6.columns
+        %label State
+        %input.chars-2( type="text" name="state_billing_address" )
+
+      .large-3.small-6.columns
+        %label Zip Code
+        %input.chars-5( type="text" name="zipcode_billing_address" )

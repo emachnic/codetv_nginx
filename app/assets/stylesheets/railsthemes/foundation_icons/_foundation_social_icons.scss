@@ -1,0 +1,117 @@
+/* Foundation Social Icons: */
+$fontFileName: "railsthemes/foundation_icons/social_foundicons";
+$fontName: "SocialFoundicons";
+$classPrefix: "foundicon-social-";
+
+@mixin i-class($name,$pua) {
+  .#{$classPrefix}#{$name}:before {
+    content: "\f#{$pua}";
+  }
+}
+
+@mixin ie-class($name,$pua) {
+  .#{$classPrefix}#{$name} {
+    *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = "&#xf#{$pua};");
+  }
+}
+
+@font-face {
+  font-family: $fontName;
+  src: font-url('#{$fontFileName}.eot');
+  src: font-url('#{$fontFileName}.eot?#iefix') format('embedded-opentype'),
+       font-url('#{$fontFileName}.woff') format('woff'),
+       font-url('#{$fontFileName}.ttf') format('truetype'),
+       font-url('#{$fontFileName}.svg##{$fontName}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* global foundicon styles */
+[class*="#{$classPrefix}"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* icons */
+@include i-class(thumb-up,"000");
+@include i-class(thumb-down,"001");
+@include i-class(rss,"002");
+@include i-class(facebook,"003");
+@include i-class(twitter,"004");
+@include i-class(pinterest,"005");
+@include i-class(github,"006");
+@include i-class(path,"007");
+@include i-class(linkedin,"008");
+@include i-class(dribbble,"009");
+@include i-class(stumble-upon,"00a");
+@include i-class(behance,"00b");
+@include i-class(reddit,"00c");
+@include i-class(google-plus,"00d");
+@include i-class(youtube,"00e");
+@include i-class(vimeo,"00f");
+@include i-class(flickr,"010");
+@include i-class(slideshare,"011");
+@include i-class(picassa,"012");
+@include i-class(skype,"013");
+@include i-class(steam,"014");
+@include i-class(instagram,"015");
+@include i-class(foursquare,"016");
+@include i-class(delicious,"017");
+@include i-class(chat,"018");
+@include i-class(torso,"019");
+@include i-class(tumblr,"01a");
+@include i-class(video-chat,"01b");
+@include i-class(digg,"01c");
+@include i-class(wordpress,"01d");
+
+.lt-ie9 {
+  /* general icons for IE7 */
+  [class*="#{$classPrefix}"] {
+    font-family: $fontName;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @include ie-class(thumb-up,"000");
+  @include ie-class(thumb-down,"001");
+  @include ie-class(rss,"002");
+  @include ie-class(facebook,"003");
+  @include ie-class(twitter,"004");
+  @include ie-class(pinterest,"005");
+  @include ie-class(github,"006");
+  @include ie-class(path,"007");
+  @include ie-class(linkedin,"008");
+  @include ie-class(dribbble,"009");
+  @include ie-class(stumble-upon,"00a");
+  @include ie-class(behance,"00b");
+  @include ie-class(reddit,"00c");
+  @include ie-class(google-plus,"00d");
+  @include ie-class(youtube,"00e");
+  @include ie-class(vimeo,"00f");
+  @include ie-class(flickr,"010");
+  @include ie-class(slideshare,"011");
+  @include ie-class(picassa,"012");
+  @include ie-class(skype,"013");
+  @include ie-class(steam,"014");
+  @include ie-class(instagram,"015");
+  @include ie-class(foursquare,"016");
+  @include ie-class(delicious,"017");
+  @include ie-class(chat,"018");
+  @include ie-class(torso,"019");
+  @include ie-class(tumblr,"01a");
+  @include ie-class(video-chat,"01b");
+  @include ie-class(digg,"01c");
+  @include ie-class(wordpress,"01d");
+}

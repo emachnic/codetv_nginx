@@ -1,0 +1,62 @@
+.row
+  .large-12.columns.small-12.columns
+    .section-container.horizontal-nav{"data-section" => "horizontal-nav", :style => ""}
+      -6.times do |counter|
+        %section.section
+          %p.title{:style => "left: 0px;"}
+            =link_to "Section #{counter+1}", "#"
+          .content{:style => ""}
+            %ul.side-nav
+              -5.times do |counter|
+                %li
+                  =link_to "Link #{counter+1}", "#"
+.row
+  .large-12.small-12.columns
+    %h2 BLOG! 
+    = "Welcome to my blog. It is awesome."
+%hr.greyscale
+.row
+  .large-10.small-12.columns
+    %h3 Blog Post Title
+    %strong Written by 
+    =link_to "Joe Smith", "#"
+    %strong on July 24, 2013
+    .row
+      .large-6.small-12.columns
+        %br
+        -2.times do
+          %p= lorem(20)
+      .large-6.small-12.columns.left
+        = image_tag "http://placehold.it/450x200&text=Image"
+    .row
+      .large-12.small-12.columns
+        %p= lorem(40)
+        %hr.greyscale
+    .row
+      .large-12.small-12.columns
+        %h3 Blog Post Title
+        %strong Written by 
+        =link_to "Joe Smith", "#"
+        %strong on July 24, 2013
+        .row
+          .large-6.small-12.columns
+            %br
+            -2.times do
+              %p= lorem(20)
+          .large-6.small-12.columns.left
+            = image_tag "http://placehold.it/450x200&text=Image"
+        .row
+          .large-12.small-12.columns
+            %p= lorem(40)
+            %hr.greyscale
+  .large-2.small-12.columns
+    %ul{:style => "list-style-type: none;"}
+      %h5 Categories
+      -["News", "Music", "Writing", "Code", "Furniture", "Pugs", "Food"].each do |category|
+        %li
+          =link_to "#{category}", "#"
+    %br
+    .panel
+      %h5 Featured
+      %p.feature-description= lorem(40)
+      %p.feature-description= link_to "Read More...", "#"

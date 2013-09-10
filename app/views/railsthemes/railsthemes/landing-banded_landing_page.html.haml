@@ -1,0 +1,40 @@
+.row
+  .large-3.small-12.columns
+    = image_tag "http://placehold.it/500x150&text=Logo"
+  .large-9.small-12.columns
+    %section.top-bar-section
+      %ul.right{:style => "list-style-type: none;"}
+        %li.active
+          =link_to "Section", "#"
+        %li.divider
+        -2.times do
+          %li
+            =link_to "Section", "#"
+          %li.divider
+        %li
+          =link_to "Section", "#"
+
+%br
+.row
+  .large-12.small-12.columns
+    = image_tag "http://placehold.it/1000x500&text=Image"
+
+%hr.greyscale
+.row
+  .large-4.small-12.columns
+    = image_tag "http://placehold.it/400x300&text=Image"
+  .large-4.small-12.columns
+    %h3 Content Section
+    %p= lorem(33)
+  .large-4.small-12.columns
+    .large-4.small-12.columns
+    %p= lorem(35)
+    
+%br
+.row
+  .large-8.small-12.columns
+    %h3 Content Section
+    %p= lorem(50)
+  .large-4.small-12.columns
+    = image_tag "http://placehold.it/400x300&text=Image"
+%hr.greyscale

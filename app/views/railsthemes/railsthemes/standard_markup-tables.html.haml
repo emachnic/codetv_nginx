@@ -1,0 +1,54 @@
+%h1 Tables
+%h2 Standard HTML5-ish table:
+%table.responsive
+  %thead
+    %tr
+      - headings = ["First Name", "Last Name", "Birth Date", "Favorite Color", "Balance"]
+      - headings.each do |heading|
+        %th= heading
+  %tfoot
+    %tr
+      - ["N/A", "N/A", "N/A", "N/A", "$1451.25"].each do |data|
+        %td= data
+  %tbody
+    - customers = [["John", "Smith", "03/14/56", "Red", "$400.00"],[ "Jane", "Smith", "12/25/76", "Fuschia", "$500.00"],["Junior", "Smith", "12/25/06", "Green", "$51.25"],["John", "Doe", "01/25/76", "Black", "$500.00"]]
+    - customers.each do |values|
+      %tr
+      - values.each do |value|
+        %td= value
+
+%h2 Old-School 3.2.x Scaffold-style table:
+:plain
+  <table class="responsive">
+    <tbody><tr>
+      <th>Overdone</th>
+      <th>Number</th>
+      <th>Price</th>
+      <th>Model name</th>
+      <th>Summary</th>
+      <th>Created at</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>Lorem</td>
+      <td>Lorem ipsum dolor sit amet. </td>
+      <td>Sat Jan 01 15:58:12 UTC 2000</td>
+      <td><a href="#">Edit</a></td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>Lorem</td>
+      <td>Lorem consectetuer elit. </td>
+      <td>Sat Jan 01 15:58:12 UTC 2000</td>
+      <td><a href="#">Edit</a></td>
+    </tr>
+  </tbody></table>
+
+%h2 Rails 4.x Scaffold Tables:
+%p
+  %em Coming Soon

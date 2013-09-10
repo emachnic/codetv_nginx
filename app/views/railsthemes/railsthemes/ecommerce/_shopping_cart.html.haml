@@ -1,0 +1,46 @@
+%form.smooth
+  %table.cart
+    %thead
+      %tr
+        %th Items
+        %th Delivery
+        %th Price
+        %th Qty
+        %th Item Total
+    %tbody
+      %tr
+        %td
+          .row
+            .large-3.small-3.columns
+              = image_tag "http://placehold.it/100x100&text=[Product]", :class => "prod-image"
+            .large-9.small-9.columns
+              %p
+                %span.product-title Widget
+                %span.description - Lorem ipsum dolor sit amet, consectetur adipiscing elit ...
+                = link_to('Save for later', '#')
+        %td
+          %ul.shipping_options
+            %li
+              %input{ :type => 'radio' }
+              %label Store Pickup
+              %note Arrives at store Wed 10/5 - Thur 10/11
+            %li
+              %input{ :type => 'radio' }
+              %label Ship to Home
+              %note Standard Shipping; Arrives Tue 10/2 - Fri 10/5
+        %td
+          %label.price8.95
+        %td
+          %input{ :type => 'quantity', :value => 1 }
+        %td
+          %label.price8.95
+      %tr.total
+        %td.headers{ :colspan => 2 }
+          %p Subtotal
+          %p Estimated Shipping
+          %p.total Order Total
+        %td{ :colspan => 3 }
+          %p.price $8.95
+          %p.price $0.00
+          %p.price.total $8.95
+

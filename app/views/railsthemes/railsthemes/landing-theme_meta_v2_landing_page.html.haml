@@ -1,0 +1,38 @@
+.meta_landing
+  .row
+    .header.large-12.small-12.columns
+      %h1.centered This Tagline is Amazing. Buy Today!
+  .row
+    .header.large-12.small-6.columns.large-centered.small-centered.center-text
+      = link_to "Learn More", "#", :class => "button"
+      = link_to "View Themes", "#", :class => "button secondary"
+  .row
+    .large-12.small-12.columns
+      %h2.subheading.centered If that headline didn't get you, this one will!
+  %hr.greyscale
+  %br
+  - 2.times do
+    .row
+      - 2.times do
+        .large-6.small-12.columns
+          = link_to "#" do
+            .panel
+              = image_tag "http://placehold.it/85x125", :class => "pop-out left th"
+              %h3 Beautiful Designs
+              %p Designed by professional designers (and developed by professional web developers), our themes are real lookers.
+  %hr.greyscale
+  .row
+    .large-12.small-12.columns
+      %h2.centered Featured Themes
+  .row
+    - 2.times do
+      .large-6.small-12.columns
+        = render :partial => 'railsthemes/railsthemes/wide_product_summary', :locals => { :image => "http://placehold.it/420x130&text=Image", :link => "#", :name => "Inspiration"}
+  %hr.greyscale
+  .row
+    .large-12.small-12.columns
+      %h2.centered Happy Customers
+  .row
+    - 3.times do
+      .panel
+        = render 'railsthemes/railsthemes/testimonial'

@@ -1,0 +1,68 @@
+.meta_landing
+  .row
+    .large-6.small-12.columns
+      %h1 This is your biggest talking point.
+      %p <strong>Meta</strong> is a <strong>prefix</strong> used in English (and other Greek-owing languages) to indicate a concept which is an abstraction from another concept, used to complete or add to the latter.
+      %div
+        = link_to "Learn More", "#", :class => "button call_to_action demi-full-width"
+    .large-6.small-12.columns
+      .featured_content
+        = image_tag "http://placehold.it/496x380&text=Image"
+  %hr
+
+  .row
+    .large-5.small-12.columns
+      %h2 So, what is Meta?
+      %ul
+        - meta_list = ["Overused", "Pretty Epic", "Popular with the uber-nerds", "Eliza's third-favorite word", "Abstract", "Data about data"]
+        - meta_list.each do |item|
+          %li= item
+      =image_tag "http://placehold.it/300x400&text=Image"
+    .large-7.small-12.columns
+      .row
+        - 4.times do
+          .feature.large-6.small-12.columns
+            %h3 Vulputate Ullamcorper
+            = link_to "#" do
+              =image_tag "http://placehold.it/75x75&text=Image", :class => "th radius"
+            %p= lorem(17)
+
+  %hr
+  .row
+    .small-12.columns
+      %h2.centered.eye-catcher Punchy, quick text to draw the audience in immediately.
+      %p
+        Because, really, what is more meta than describing what you're doing instead of actually doing it.
+        = lorem(18)
+    %hr
+
+  .row
+    .large-6.small-12.columns
+      %h2
+        %span.tweets Recent Tweets
+      .tweets
+        -#- This is a Twitter widget with height 510px:
+        :plain
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/RailsThemes"  data-widget-id="304981788403580928">Tweets by @RailsThemes</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    .large-6.small-12.columns
+      %h2 Services
+      %p
+        Among our more popular services is
+        = link_to "bitter copywriting.", "http://elizabrock.com"
+        We also offer some of the best synonym-googling available on the internet today.
+      %p
+        %span.meet-peep Meet our people. They are so friendly.
+        = link_to "#", class: "button-custom", title: "" do
+          Make an appointment.
+      %h2 Our Happy Team
+      %ul.inline-list
+        - 6.times do
+          %li.team-images
+            = link_to "#" do
+              = image_tag "http://placehold.it/100x100&text=Headshot", :class => "th radius"
+      %h2 Downloads
+      %p
+        - 2.times do
+          = link_to "#", class: "button", title: "" do
+            Document

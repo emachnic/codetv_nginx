@@ -1,0 +1,134 @@
+.row
+  .large-3.small-12.columns
+    .cart_summary.panel
+      %h4 Cart Summary
+      %hr
+      -3.times do
+        .row
+          .large-4.small-4.columns
+            = image_tag "http://placehold.it/500x500"
+          .large-5.small-5.columns
+            %p Product
+          .large-2.small-2.columns
+            = link_to "x", "javascript:void(0)"
+      .row
+        %table.large-12.small-12.columns.mobile-margin-top
+          %tr
+            %th Subtotal
+            %td $40
+          %tr
+            %th Taxes
+            %td $40
+          %tr
+            %th Total
+            %td $80
+  .large-9.small-12.columns
+    .section-container.accordion{ "data-section" => "accordion" }
+      %section.active
+        %h5.title{ "data-section-title" => "" }
+          = link_to "#" do
+            1. Shipping Information
+        .content{ "data-section-content" => "" }
+          .row
+            .large-12.small-12.columns
+              .row
+                - field_labels = ["First Name", "Last Name", "Email", "Phone", "Street Address 1", "Street Address 2", "City"]
+                - field_labels.each do |label|
+                  .large-6.columns
+                    %label #{label}
+                    %input{ :type => "text" }
+                .large-3.columns
+                  %label State
+                  %input{ :type => "text" }
+                .large-3.columns
+                  %label Zip
+                  %input{ :type => "text" }
+              .row
+                .large-12.columns
+                  %label Country
+                  %select
+                    %option United States
+              .row
+                .large-12.columns
+                  %label
+                    %input{ :type => "checkbox" } This is a PO, APO or AE box
+      %section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "#" do
+            2. Shipping Method &amp; Gift Options
+        .content{ "data-section-content" => "" }
+          .row
+            .large-7.small-7.columns
+              %h6 Shipping Method
+              .row
+                .large-12.columns
+                  %label
+                    %input{ :type => "radio", :name => "shipping" }
+                      %span $9.00 Standard
+                      %p (3 weeks)
+                .large-12.columns
+                  %label
+                    %input{ :type => "radio", :name => "shipping" }
+                      %span $20.00 Priority
+                      %p (1 day)
+              .row
+                .large-12.small-12.columns
+                  %h6 Gift Options
+                  %label
+                    %input{ :type => "checkbox" }
+                      Add a gift message to this order
+                  %br
+                  .row
+                    .large-12.small-12.columns
+                      .panel
+                        %p Custom fees and additional fees may apply for international shipments.
+            .large-5.small-5.columns
+              = image_tag "http://placehold.it/500x500&text=[Image]"
+      %section
+        %h5.title{ "data-section-title" => "" }
+          = link_to "#" do
+            3. Payment Info
+        .content{ "data-section-content" => "" }
+          .row
+            .large-12.small-12.columns
+              %label Name (as it appears on your card)
+              %input{ :type => "text" }
+              %label Card number
+              %input{ :type => "text" }
+              %label Expiration date
+              .row
+                .large-6.small-6.columns
+                  %select
+                    %option 01 - January
+                .large-6.small-6.columns
+                  %select
+                    %option 2014
+              .row
+                .large-6.small-6.columns
+                  %label Security code
+                  %input{ :type => "text" }
+              %h6 Billing Address
+              %label
+                %input.billing_address_toggle{ :type => "checkbox", :checked => "checked" } 
+                  Same as my shipping address
+              %br
+              .billing_address{ :style => "display: none;" }
+                .row
+                  - field_labels[4..6].each do |label|
+                    .large-6.small-12.columns
+                      %label #{label}
+                      %input{ :type => "text" }
+                  .large-3.small-12.columns
+                    %label State
+                    %input{ :type => "text" }
+                  .large-3.small-12.columns
+                    %label Zip
+                    %input{ :type => "text" }
+                .row.billing_address_fields
+                  .large-12.small-12.columns
+                    %label Country
+                    %select
+                      %option United States
+                %label
+                  %input{ :type => "checkbox" } This is a PO, APO or AE box
+              %button Place Order
