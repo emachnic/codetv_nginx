@@ -23,6 +23,7 @@ db/*.sqlite3
 # various artifacts
 **.war
 *.rbc
+.rbx/
 *.sassc
 .rspec
 .redcar/
