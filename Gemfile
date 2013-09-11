@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -11,7 +12,6 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'simple_form', '>= 3.0.0.rc'
 group :development do
-  gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'guard-bundler'
   gem 'guard-rails'
@@ -22,13 +22,21 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'chef', '~> 10.12.0'
 end
 group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
+  gem 'mixlib-log', require: false
+  gem 'mixlib-cli', require: false
+  gem 'chefspec', '~> 2.0.0'
 end
 group :production do
   gem 'unicorn'
+  gem 'execjs'
 end
 group :test do
   gem 'capybara'
