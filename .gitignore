@@ -24,6 +24,7 @@ db/*.sqlite3
 **.war
 *.rbc
 .rbx/
+.vagrant/
 *.sassc
 .rspec
 .redcar/
