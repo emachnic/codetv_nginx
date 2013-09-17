@@ -1,0 +1,33 @@
+upstream <%= node['nginx']['upstream_server_name'] %> {
+	# This is the socket we configured in unicorn.rb
+	server unix:/tmp/sockets/unicorn.sock fail_timeout=0;
+}
+
+server {
+	listen 80;
+	client_max_body_size <%= node['nginx']['client_max_body_size'] %>;
+	server_name <%= node['nginx']['codetv_server_name'] %>;
+
+	keepalive_timeout 5;
+
+	# Location of our static files
+	root <%= node['nginx']['codetv_root'] %>;
+
+	location / {
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Host $http_host;
+		proxy_redirect off;
+
+		# If you don't find the filename in the static files
+		# Then request it from the unicorn server
+		if (!-f $request_filename) {
+			proxy_pass http://<%= node['nginx']['upstream_server_name'] %>;
+			break;
+		}
+	}
+
+	error_page 500 502 503 504 /500.html;
+	location = /500.html {
+		root <%= node['nginx']['codetv_root'] %>;
+	}
+}
