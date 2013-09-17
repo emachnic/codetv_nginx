@@ -14,4 +14,16 @@ if platform? 'ubuntu', 'debian'
 			action :install
 		end
 	end
+	
+	# Install nokogiri outside of Bundler first because it hates Ubuntu
+	gem_package 'nokogiri' do
+	  version '1.6.0'
+	  action :install
+  end
+  
+  # Install bundler so we can bundle our gems
+  gem_package 'bundler' do
+    action :install
+  end
+end
 end
