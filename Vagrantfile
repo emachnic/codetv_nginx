@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "codetv"
+  
+  #config.ssh.username = 'vagrant'
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -86,8 +88,13 @@ Vagrant.configure("2") do |config|
   #   chef.json = { :mysql_password => "foo" }
   # end
   config.vm.provision :chef_solo do |chef|
+    chef.add_recipe 'ohai'
+    chef.add_recipe 'resolver'
+    chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
+    chef.add_recipe 'runit'
     chef.add_recipe 'packages'
+    chef.add_recipe 'nginx'
 	end
 
   # Enable provisioning with chef server, specifying the chef server URL,
